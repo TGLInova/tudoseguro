@@ -1,0 +1,114 @@
+[
+    {
+        "id" : 1,
+        "nome": "Seguros Patrimoniais (Empresa, Condomínio e Residência)",
+        "descricao": "Com a contratação dos Seguros Patrimoniais, a sua empresa, residência ou condomínio ficam protegidos contra diversos riscos, além de contar com uma ampla gama de serviços de assistência que facilitam o seu dia-a-dia.",
+        "url": "https://www.multisegseguros.com.br/seguros-patrimoniais-empresa-condominio-e-residencia/",
+        "icone": "icon-patrimonio",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/residencial.jpg"
+    },
+    {
+        "id": 2,
+        "nome": "Seguros de Riscos Diversos/Equipamentos",
+        "descricao": "Seja na agricultura, construção civil, indústria, comércio ou mesmo para utilização particular, a contratação do Seguro de Riscos Diversos para equipamentos é essencial para a proteção contra danos de causa externa que possam advir de sua operação. ",
+        "url": "https://www.multisegseguros.com.br/seguro-de-riscos-diversos-equipamentos/",
+        "icone" : "icon-ferramentas",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/riscos-diversos.jpg"
+    },
+    {
+        "id" : 3,
+        "nome": "Seguro contra Riscos Ambientais",
+        "descricao": "Com a crescente preocupação da sociedade com a proteção do meio-ambiente aliada ao aumento da rigidez das normas ambientais, torna-se essencial que as empresas contratem o Seguro contra Riscos Ambientais.",
+        "url": "https://www.multisegseguros.com.br/seguro-contra-riscos-ambientais/",
+        "icone": "icon-flor",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/riscos-ambientais.jpg"
+    },
+    {
+        "id" : 4,
+        "nome": "Seguro de Responsabilidade Civil Geral",
+        "descricao": "O Seguro de Responsabilidade Civil Geral abrange uma vasta gama de modalidades e coberturas que, em síntese, visam conferir proteção contra danos involuntários causados a terceiros, sejam estes de ordem material ou pessoal.",
+        "url": "https://www.multisegseguros.com.br/seguro-de-responsabilidade-civil/",
+        "icone" : "icon-seguranca",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/civil_empresarial.jpg"
+    },
+    {
+        "id" : 5,
+        "nome": "Seguros de Responsabilidade Civil Profissional",
+        "descricao": "O Seguro de Responsabilidade Civil Profissional, também conhecido como E&amp;O, confere proteção contra danos causados a terceiros por erros e omissões destes profissionais, abrangendo tanto eventual indenização quanto os custos e despesas processuais, incluindo honorários advocatícios.",
+        "url": "https://www.multisegseguros.com.br/seguro-de-responsabilidade-civil-profissional-eo/",
+        "icone" : "icon-caminhao",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/civil_empresarial.jpg"
+    },
+    {
+        "id" : 6,
+        "nome": "Seguro de Responsabilidade D&O",
+        "descricao": "Com o crescimento do número de leis que preveem a possibilidade de responsabilização pessoal dos administradores e diretores da empresa, dentre as quais se inclui o Código Civil e o Código de Defesa do Consumidor, o Seguro D&amp;O surgiu como uma alternativa para conferir tranquilidade no exercício das funções a estas pessoas que possuem poder de gestão.",
+        "url": "https://www.multisegseguros.com.br/seguro-de-responsabilidade-civil-para-diretores-e-administradores-do/",
+        "icone" : "icon-nuvem",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/civil_empresarial.jpg"
+    },
+    {
+        "id" : 7,
+        "nome": "Seguro de Vida e Acidentes Pessoais",
+        "descricao": "O Seguro de Vida e Acidentes Pessoais é um importante benefício que as empresas devem conferir aos seus empregados, visando proporcionar tranquilidade em um momento difícil.",
+        "url": "https://www.multisegseguros.com.br/seguro-de-vida-e-acidentes-pessoais/",
+        "icone" : "icon-coracao",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/saude_empresarial.jpg"
+    },
+    {
+        "id" : 8,
+        "nome": "Seguro Odontológico",
+        "descricao": "Essenciais para propiciar o bem-estar dos segurados, contribuindo assim com a retenção de talentos e redução do absenteísmo, o Seguro Odontológico tem benefícios almejados por colaboradores de empresas.",
+        "url": "https://www.multisegseguros.com.br/seguro-odontologico/",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/odontologico.jpg",
+        "icone" : "icon-dente"
+    },
+    {
+        "id" : 9,
+        "nome": "Seguro Viagem",
+        "descricao": "Com o Seguro Viagem, o Segurado fica protegido em viagens nacionais e internacionais, contando com uma ampla gama de coberturas que garantem a tranquilidade do início ao fim do roteiro, atendendo, inclusive, às exigências do Tratado de Schengen.",
+        "url": "https://www.multisegseguros.com.br/seguro-viagem/",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/viagem.jpg",
+        "icone" : "icon-aviao"
+    },
+    {
+        "id" : 10,
+        "nome": "Seguro Contra Risco Cibernético",
+        "descricao": "Com a crescente evolução da tecnologia, aumentam os riscos que as organizações estão sujeitas na realização de seus negócios. E para isso, surgiu o Seguro contra Riscos Cibernéticos, que confere proteção tanto para a empresa contratante como para terceiros prejudicados por eventual vazamento de dados.",
+        "url": "https://www.multisegseguros.com.br/risco-cibernetico/",
+        "imagem" :"https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/cibernetico.jpg",
+        "icone" : "icon-internet"
+    },
+    {
+        "id" : 11,
+        "nome": "Seguro de Transportes",
+        "descricao": "Pensando em todas as necessidades do seu público-alvo e as especificidades do mercado de transportes, a Multiseg busca soluções que visam garantir que a carga chegue a seu destino com mais segurança e, de preferência, sem avarias.",
+        "url": "https://www.multisegseguros.com.br/seguro-transporte/",
+        "imagem": "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/transporte.jpg",
+        "icone" : "icon-caminhao"
+    },
+    {
+        "id" : 12,
+        "nome": "Seguro Garantia",
+        "descricao": "O Seguro Garantia é a solução com melhor custo-benefício para quem precisa apresentar uma caução para participar de licitações, garantir o fiel cumprimento de contratos ou mesmo oferecer em processos judiciais, visando subsidiar a defesa em procedimentos de execução ou a interposição de recursos.",
+        "url": "https://www.multisegseguros.com.br/seguro-garantia/",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/garantia.jpg",
+        "icone" : "icon-seguranca"
+    },
+    {
+        "id" : 13,
+        "nome": "Seguro Saúde",
+        "descricao": "Investir na saúde é o melhor caminho para o crescimento sustentável. Sendo assim o Seguro Saúde conta com a gestão de consultas, exames, hospitais e demais serviços.",
+        "url": "https://www.multisegseguros.com.br/seguro-saude/",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/saude.jpg",
+        "icone" : "icon-coracao"
+    },
+    {
+        "id" : 14,
+        "nome": "Seguro de Automóvel",
+        "descricao": "O Seguro de Automóvel é a proteção que você precisa para que o seu veículo possa trafegar com tranquilidade nas vias. Com cobertura para danos ao próprio bem segurado, este seguro também resguarda o proprietário contra danos causados a terceiros e conta com assistência 24 horas com reboque em caso de sinistro e pane.",
+        "url": "https://www.multisegseguros.com.br/seguro-de-automovel/",
+        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/auto.jpg",
+        "icone" : "icon-caminhao"
+    }
+]
