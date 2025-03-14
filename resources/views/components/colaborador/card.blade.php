@@ -1,7 +1,7 @@
-<div class="bg-neutral-100 p-4 rounded-lg relative group space-y-5">
+<div class="bg-zinc-200 p-4 rounded-xl relative group space-y-5">
     <img alt="{{ $colaborador->nome }} {{ $colaborador->sobrenome }}"
         loading="lazy" height="225" width="147"
-        class="h-64 w-full object-center object-cover shadow-sm rounded-lg" src="{{ $colaborador->imagem?->url }}">
+        class="h-64 w-full object-center object-cover shadow-sm rounded-xl" src="{{ $colaborador->imagem?->url }}">
 
     <div>
         <h3 class="text-xl leading-none">{{ $colaborador->nome }} {{ $colaborador->sobrenome }}</h3>

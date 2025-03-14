@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" @class(['2xl:text-base lg:text-sm text-sm leading-normal h-full scroll-smooth', $htmlClass])>
+<html lang="pt-br" @class(['2xl:text-base text-sm leading-normal h-full scroll-smooth', $htmlClass])>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

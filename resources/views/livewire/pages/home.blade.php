@@ -14,51 +14,9 @@
         </x-ui::container>
     </x-ui::hero>
 
-    <x-ui::section>
-        <x-ui::container class="text-center space-y-6">
-            <x-ui::h2>
-                Somos a TudoSeguro, corretora referência em<br>
-                proteção e planejamento financeiro.
-            </x-ui::h2>
-            <p>Uma empresa com mais de 24 anos, referência nacional em seguros.</p>
-        </x-ui::container>
-    </x-ui::section>
+    <x-sections.home.about />
 
-    <x-ui::section variant="neutral" x-intersect.full:enter="enable = true" x-intersect.full:leave="enable = false"
-        x-data="{ enable: false }">
-        <x-ui::container>
-            <div class="grid grid-cols-1 lg:grid-cols-6 gap-8 items-center"
-                x-bind:class="{ '*:animate-fade-up': enable, 'opacity-0 duration-500': !enable }">
-                <x-ui::h2 class="lg:col-span-2 max-lg:text-center">
-                    Tudo para garantir tranquilidade para
-                    <strong>sua família</strong>
-                    e <strong>sua empresa</strong>!
-                </x-ui::h2>
-                <div class="lg:col-span-4 w-full">
-                    <x-ui::swiper
-                        options="{ slidesPerView: 2, spaceBetween: 5, autoplay: true, preventClicks: false, breakpoints: { 800: { slidesPerView: 3.3, spaceBetween: 20 } }, }">
-                        @foreach ($produtos as $produto)
-                            <x-ui::swiper.item wire:key="produto-swiper-item-{{ $produto->id }}">
-                                <x-ui.border-animated>
-                                    <x-produto.card :$produto />
-                                </x-ui.border-animated>
-                            </x-ui::swiper.item>
-                        @endforeach
-                        <x-ui::swiper.item>
-                            <x-ui::card :href="route('produtos')"
-                                class="flex-none flex flex-col w-full items-start space-y-4 h-80 duration-500 border-2 border-primary-200 hover:bg-primary-500">
-                                <x-icon name="heroicon-o-magnifying-glass"
-                                    class="lg:w-10 lg:h-10 h-8 w-8 flex-none text-primary-200" />
-                                <div class="text-2xl flex items-center grow">
-                                    Conferir todas as nossas soluções.
-                                </div>
-                            </x-ui::card>
-                        </x-ui::swiper.item>
-                    </x-ui::swiper>
-                </div>
-            </div>
-        </x-ui::container>
-    </x-ui::section>
+    <x-produto.section :produtos="$produtos" />
 
     <x-ui::section>
         <x-ui::container class="grid lg:grid-cols-2 gap-24">
@@ -149,34 +107,29 @@
         </x-ui::container>
     </x-ui::section>
 
-    {{-- <x-ui.feature-list :dark="true" /> --}}
-{{--
-    <x-ui::hero variant="large" :image="asset('/static/img/banner-home-2.webp')" container-class="flex flex-col justify-center"
-        class="max-lg:bg-[position:70%_bottom]">
-        <x-ui::section>
-            <x-ui::container class="grid lg:grid-cols-5 lg:gap-24 gap-12">
-                <div class="space-y-5 duration-700 lg:col-span-2" x-bind:class="{ '*:animate-fade-up': enable }">
-                    <x-ui::h2 class="animate-duration-200">A solução que você precisa!</x-ui::h2>
-                    <p class="font-bold animate-delay-300">Temos o compromisso com a excelência em todas as
-                        modalidades
-                        de seguro praticadas pelo Mercado.</p>
-                    <p class="animate-delay-500">Da primeira cotação a eventual ocorrência do Sinistro, a
-                        consultoria completa para você.</p>
-                    <x-ui::button variant="primary-200" class="font-bold animate-delay-700">
-                        Solicitar uma cotação
-                    </x-ui::button>
+    <x-ui::section x-data="{ animate: false }" x-intersect.half:enter="animate = true"
+        x-intersect.half:leave="animate = false">
+
+        <x-ui::container>
+            <div class="grid lg:grid-cols-3 gap-12">
+                <div x-bind:class="{ 'animate-fade-left': animate }">
+                    <x-ui::h2 class="mb-5">Somos <strong>especialistas</strong> em proteger a carreira e o futuro
+                        financeiro dos <strong>profissionais liberais</strong>.</x-ui::h2>
+                    <p>Conheça um portfólio de proteções para você trabalhar com confiança!</p>
                 </div>
-                <div class="grid grid-cols-2 lg:gap-x-16 gap-x-8 gap-y-6 lg:col-span-3">
-                    @foreach (['Análise de coberturas', 'Avaliação e gerência de riscos', 'Realização de inspeções', 'Elaboração de programas de seguros', 'Realização de inspeções', ' Montagem de Contratos', 'Acompanhamento de sinistros', 'Assistência junto a seguradoras', 'Apoio administrativo'] as $v)
-                        <div>
-                            <span
-                                class="bg-primary-400 px-3 py-1 text-sm inline-flex items-center">{{ $v }}</span>
-                        </div>
+                <div class="flex lg:col-span-2 justify-center">
+                    @foreach ([1, 2, 3] as $i)
+                        <img src='{{ asset("static/img/especialista-{$i}.webp") }}'
+                            x-bind:class="{ 'animate-fade-left': animate }" @class([
+                                'lg:w-56 w-1/3 flex-none animate-delay-(--delay-value) object-contain',
+                                '-mr-5' => !$loop->last,
+                            ])
+                            style="--delay-value: {{ $i * 300 }}ms">
                     @endforeach
                 </div>
-            </x-ui::container>
-        </x-ui::section>
-    </x-ui::hero> --}}
+            </div>
+        </x-ui::container>
+    </x-ui::section>
 
     <x-ui::section class="text-center space-y-12">
         <x-ui::h2 class="text-center">Conheça nossa equipe de especialistas</x-ui::h2>
@@ -191,8 +144,8 @@
             </x-ui::swiper>
         </x-ui::container>
 
-        <x-ui::button variant="primary-200">
-            Entrar em contato com a nossa equipe
+        <x-ui::button variant="primary">
+            Conhecer toda a nossa equipe
         </x-ui::button>
     </x-ui::section>
 
@@ -200,61 +153,87 @@
 
     <x-ui::section variant="primary">
         <x-ui::container>
-            <div class="grid lg:grid-cols-4 gap-12">
-                <header>
-                    <x-ui::h2 class="lg:mb-8 max-lg:text-center">
-                        Últimas novidades do mercado:
+            <div class="grid grid-cols-2 gap-12 items-center">
+                <div>
+                    <x-ui::h2>
+                        Cartão de Benefícios <strong>Tudo Seguro</strong>.
                     </x-ui::h2>
-                    <x-ui::button :href="route('blog', [], false)" wire:navigate variant="primary-200" class="max-lg:hidden">
-                        Ler mais no blog
+                    <p>Descontos em farmácias, clínicas e academias.</p>
+                </div>
+                <div class='space-y-6'>
+                    <x-ui::input variant="transparent" />
+                    <x-ui::input variant="transparent" />
+                    <x-ui::button variant="primary-400" class="w-full">
+                        Gerar meu cartão
                     </x-ui::button>
-                </header>
-                <section class="lg:col-span-3 flex flex-col items-center">
-                    <x-ui::swiper :pagination="false"
-                        options="{
-                        direction: 'vertical',
-                        autoplay: false,
-                        preventClicks: false,
-                        slidesPerView: 1.8,
-                        breakpoints: {
-                            800: {  slidesPerView: 2.5 }
-                        }
-                    }"
-                        class="lg:h-[32rem] h-[32rem] cursor-grab">
-                        @foreach ($posts as $post)
-                            <x-ui::swiper.item>
-                                <x-post.card :$post />
-                            </x-ui::swiper.item>
-                        @endforeach
-                    </x-ui::swiper>
-                    <x-ui::button :href="route('blog', [], false)" wire:navigate variant="primary-200" class="lg:hidden mt-12">
-                        Ler mais no blog
-                    </x-ui::button>
-                </section>
+                </div>
             </div>
         </x-ui::container>
     </x-ui::section>
 
-    <x-contato.big-card />
-
     <div class="py-8">
-        <x-ui::container class="flex gap-16 items-center">
-            <x-ui::h3 class="max-lg:hidden text-nowrap">Nossos Parceiros:</x-ui::h3>
-            <x-ui::swiper class="grow" swiper-wrapper-class="items-center"
+        <x-ui::container class="grid grid-cols-4 gap-8 items-center">
+            <x-ui::h3 class="max-lg:hidden">
+                Conheça alguns de
+                <span class="font-semibold">nossos parceiros</span>
+            </x-ui::h3>
+            <div class="col-span-3">
+                <x-ui::swiper class="w-full" swiper-wrapper-class="items-center"
+                    options="{
+                    slidesPerView: 5,
+                    breakpoints: {
+                        800: { slidesPerView: 5, spaceBetween: 35, loop: true, autoplay: true }
+                    }
+                }">
+                    @foreach ($parceiros as $parceiro)
+                        <x-ui::swiper.item>
+                            <img src="{{ $parceiro->imagem->url }}" title="{{ $parceiro->nome }}"
+                                alt="{{ $parceiro->nome }}" loading="lazy" width="138" height="90"
+                                class="w-full object-contain object-center grayscale hover:grayscale-0 duration-300">
+                        </x-ui::swiper.item>
+                    @endforeach
+                </x-ui::swiper>
+            </div>
+        </x-ui::container>
+    </div>
+
+    <x-ui::section>
+        <x-ui::container>
+            <x-ui::h2 class="text-center mb-12">
+                Conheça nossa história e nossa estrutura!
+            </x-ui::h2>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="rounded-lg h-64 bg-neutral-300"></div>
+                <div class="rounded-lg h-64 bg-neutral-300"></div>
+            </div>
+        </x-ui::container>
+    </x-ui::section>
+
+    <x-ui::section>
+        <x-ui::container>
+            <x-ui::h2 class="text-center mb-12">
+                Notícias e novidade do nosso <strong>Blog</strong>!
+            </x-ui::h2>
+
+            <x-ui::swiper
                 options="{
-            slidesPerView: 5,
-            breakpoints: {
-                800: { slidesPerView: 6, spaceBetween: 35, loop: true, autoplay: true }
-            }
-        }">
-                @foreach ($parceiros as $parceiro)
+                slidesPerView: 1.3,
+                direction: 'horizontal',
+                breakpoints: {
+                    800: {
+                        slidesPerView: 4
+                    }
+                }
+            }"
+                class="animate-delay-300 max-lg:h-[45rem]">
+                @foreach ($posts as $post)
                     <x-ui::swiper.item>
-                        <img src="{{ $parceiro->imagem->url }}" title="{{ $parceiro->nome }}"
-                            alt="{{ $parceiro->nome }}" loading="lazy" width="138" height="90"
-                            class="w-full object-contain object-center grayscale hover:grayscale-0 duration-300">
+                        <x-post.card :post="$post" />
                     </x-ui::swiper.item>
                 @endforeach
             </x-ui::swiper>
         </x-ui::container>
-    </div>
+    </x-ui::section>
+
 </div>

@@ -9,7 +9,7 @@
 @source '../../config/bless-ui.php';
 
 @theme {
-    --color-primary-200: #2892d7;
+    --color-primary-200: #0071B1;
     --color-primary-400: #0071B1;
     --color-primary-500: #004f7b;
     --color-primary-600: #232938;
@@ -67,6 +67,16 @@
             @apply bg-gradient-to-r from-primary-600 to-transparent;
         }
     }
+
+    .ui-footer {
+        & .ui-footer-item-title {
+            @apply max-lg:w-24 text-lg flex-none;
+        }
+
+        & .ui-footer-item {
+            @apply flex lg:flex-col gap-6;
+        }
+    }
 }
 
 @utility ui-navbar-links {
@@ -81,15 +91,6 @@
     }
 }
 
-@utility ui-footer {
-    & .ui-footer-item-title {
-        @apply max-lg:w-24 text-lg flex-none;
-    }
-
-    & .ui-footer-item {
-        @apply flex lg:flex-col gap-6;
-    }
-}
 
 @layer utilities {
     :root {

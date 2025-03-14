@@ -24,12 +24,12 @@ return [
             'base'   => [
                 'duration-500 transition-colors inline-flex outline-hidden items-center justify-center active:-translate-y-px disabled:opacity-40',
                 'px-4 py-2',
-                $rounded
+                'rounded-sm'
             ],
             'variants' => [
                 'normal'      => 'text-base',
                 'primary'     => 'bg-primary hover:bg-primary-200 text-white',
-                'primary-200' => 'text-white bg-primary-200 border-2 border-transparent hover:bg-transparent hovertext-primary-200 hover:border-current',
+                'primary-400' => 'text-white bg-primary-400 border-2 border-transparent hover:bg-transparent hovertext-primary-200 hover:border-current',
                 'small'       => 'text-xs px-2! py-1.5!',
                 'large'       => 'text-lg px-6! py-2.5!'
             ]
@@ -170,7 +170,7 @@ return [
 
         'h1' => [
             'base' => [
-                'text-4xl',
+                'lg:text-4xl',
             ],
             'variants' => [
                 'normal' => 'font-semibold leading-snug'
