@@ -16,7 +16,7 @@ class Home extends BasePageComponent
     {
         $produtos = Produto::query()->web()->take(10)->cursor();
 
-        $colaboradores = Colaborador::oldest('ordem')->cursor();
+
 
         $testemunhos = Testemunho::query()->web()->cursor();
 
@@ -26,7 +26,6 @@ class Home extends BasePageComponent
 
         return view('livewire.pages.home', [
             'produtos'      => $produtos,
-            'colaboradores' => $colaboradores,
             'posts'         => $posts,
             'testemunhos'   => $testemunhos,
             'parceiros'     => $parceiros

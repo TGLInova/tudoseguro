@@ -38,9 +38,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PostSeeder::class);
 
         if (app()->isLocal()) {
-            // Colaborador::count() > 2 || Colaborador::factory()->count(7)->hasImagem()->create();
-            // Testemunho::count() || Testemunho::factory()->count(8)->hasImagem()->create();
-            // Post::count() || Post::factory()->count(9)->has(Midia::factory()->state(fn () => ['caminho' => $this->cover()]), 'imagem')->create();
+            Colaborador::count() > 2 || Colaborador::factory()->count(7)->hasImagem()->create();
+            Testemunho::count() || Testemunho::factory()->count(8)->hasImagem()->create();
+            Post::count() || Post::factory()->count(9)->has(Midia::factory()->state(fn () => ['caminho' => $this->cover()]), 'imagem')->create();
         }
     }
 

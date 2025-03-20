@@ -130,27 +130,7 @@
             </div>
         </x-ui::container>
     </x-ui::section>
-
-    <x-ui::section class="text-center space-y-12">
-        <x-ui::h2 class="text-center">Conheça nossa equipe de especialistas</x-ui::h2>
-        <x-ui::container>
-            <x-ui::swiper
-                options="{ loop: true, slidesPerView: 2.1, spaceBetween: 16, breakpoints: { 800: {slidesPerView: 4.2 } } }">
-                @foreach ($colaboradores as $colaborador)
-                    <x-ui::swiper.item data-key="{{ $colaborador->id }}">
-                        <x-colaborador.card :$colaborador />
-                    </x-ui::swiper.item>
-                @endforeach
-            </x-ui::swiper>
-        </x-ui::container>
-
-        <x-ui::button variant="primary">
-            Conhecer toda a nossa equipe
-        </x-ui::button>
-    </x-ui::section>
-
-
-
+    <x-colaborador.section />
     <x-ui::section variant="primary">
         <x-ui::container>
             <div class="grid grid-cols-2 gap-12 items-center">
@@ -197,18 +177,7 @@
         </x-ui::container>
     </div>
 
-    <x-ui::section>
-        <x-ui::container>
-            <x-ui::h2 class="text-center mb-12">
-                Conheça nossa história e nossa estrutura!
-            </x-ui::h2>
-
-            <div class="grid lg:grid-cols-2 gap-8">
-                <div class="rounded-lg h-64 bg-neutral-300"></div>
-                <div class="rounded-lg h-64 bg-neutral-300"></div>
-            </div>
-        </x-ui::container>
-    </x-ui::section>
+    <x-sections.structure />
 
     <x-ui::section>
         <x-ui::container>
@@ -220,6 +189,7 @@
                 options="{
                 slidesPerView: 1.3,
                 direction: 'horizontal',
+                autoplay: false,
                 breakpoints: {
                     800: {
                         slidesPerView: 4

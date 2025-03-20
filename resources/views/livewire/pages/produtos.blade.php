@@ -1,5 +1,5 @@
 <div>
-    <x-ui::hero :image="asset('/static/img/banner-home.webp')" container-class="flex items-center">
+    <x-ui::hero :image="asset('static/img/produtos.webp')" container-class="flex items-center" :variant="['metalic']">
         <x-ui::container>
             <x-ui::h1>Conheça nossos produtos</x-ui::h1>
         </x-ui::container>

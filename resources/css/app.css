@@ -15,9 +15,12 @@
     --color-primary-600: #232938;
     --color-primary: #004f7b;
 
-    --font-sans:
-        Poppins, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: Poppins, sans-serif;
+
+    --swiper-pagination-bullet-size: 0.75rem;
+    --swiper-pagination-right: 0;
+    --swiper-pagination-bullet-vertical-gap: 2px;
+
 }
 
 /*
@@ -40,9 +43,9 @@
 }
 
 
-@utility ui-border-animated-line {
+/* @utility ui-border-animated-line {
     @apply z-10 bg-primary-200 duration-(--border-animated-delay) h-[2px] w-[2px] rounded-lg shadow-sm shadow-primary-400;
-}
+} */
 
 @layer components {
     .ui-navbar {
@@ -60,12 +63,14 @@
     .ui-hero {
 
         > .ui-hero-bg{
-            @apply h-full absolute inset-0;
+            @apply h-full w-full absolute inset-0;
         }
 
         &.metalic > .ui-hero-bg {
             @apply bg-gradient-to-r from-primary-600 to-transparent;
         }
+
+
     }
 
     .ui-footer {
@@ -74,12 +79,12 @@
         }
 
         & .ui-footer-item {
-            @apply flex lg:flex-col gap-6;
+            @apply flex lg:flex-col lg:gap-6 gap-3;
         }
     }
 }
 
-@utility ui-navbar-links {
+/* @utility ui-navbar-links {
     .ui-navbar & {
         @apply lg:gap-6 flex;
 
@@ -89,17 +94,20 @@
 
         @apply max-lg:bg-primary-400/80 max-lg:text-white max-lg:backdrop-blur-xs;
     }
-}
+} */
 
 
 @layer utilities {
-    :root {
-        --swiper-pagination-bullet-size: 0.75rem;
-        --swiper-pagination-right: 0;
-        --swiper-pagination-bullet-vertical-gap: 2px;
-    }
 
     .swiper-cloak {
         @apply hidden!;
+    }
+}
+
+.swiper-pagination-custom{
+    @apply justify-center items-center flex;
+
+    > .swiper-pagination-container{
+        @apply bg-neutral-200 px-4 py-1.5 rounded font-semibold text-black;
     }
 }

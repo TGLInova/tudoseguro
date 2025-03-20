@@ -22,13 +22,13 @@ return [
 
         'button' => [
             'base'   => [
-                'duration-500 transition-colors inline-flex outline-hidden items-center justify-center active:-translate-y-px disabled:opacity-40',
+                'duration-500 inline-flex outline-hidden items-center justify-center active:-translate-y-px disabled:opacity-40',
                 'px-4 py-2',
                 'rounded-sm'
             ],
             'variants' => [
                 'normal'      => 'text-base',
-                'primary'     => 'bg-primary hover:bg-primary-200 text-white',
+                'primary'     => 'bg-primary hover:bg-primary-200 text-white border border-white',
                 'primary-400' => 'text-white bg-primary-400 border-2 border-transparent hover:bg-transparent hovertext-primary-200 hover:border-current',
                 'small'       => 'text-xs px-2! py-1.5!',
                 'large'       => 'text-lg px-6! py-2.5!'
@@ -124,7 +124,7 @@ return [
         ],
 
         'card' => [
-            'base' => [ 'p-6', 'rounded shadow'],
+            'base' => [ 'p-6', 'rounded-lg shadow'],
             'variants' => [
                 'normal'  => [],
                 'neutral' => 'bg-neutral-200',
@@ -170,10 +170,10 @@ return [
 
         'h1' => [
             'base' => [
-                'lg:text-4xl',
+                'text-4xl',
             ],
             'variants' => [
-                'normal' => 'font-semibold leading-snug'
+                'normal' => ''
             ]
         ],
         'h2' => [
@@ -222,10 +222,12 @@ return [
         'hero' => [
             'base' => [],
             'variants' => [
-                'normal' => ['lg:h-[28rem] h-[30rem]'],
+                'normal' => ['lg:h-[28rem] h-[36rem]'],
                 'large'  => ['lg:h-[38rem] h-[40rem]'],
 
-                'metalic' => null
+                'metalic' => null,
+
+                'primary' => 'bg-primary/80 bg-blend-multiply'
             ]
         ]
 

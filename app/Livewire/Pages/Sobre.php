@@ -2,16 +2,34 @@
 
 namespace App\Livewire\Pages;
 
-use Livewire\Attributes\Layout;
-use Livewire\Component;
-
 class Sobre extends BasePageComponent
 {
     public function render()
     {
-        return view('livewire.pages.sobre')->layoutData([
+        $valores = [
+            [
+                'titulo' => 'Propósito',
+                'texto' => 'Conscientizar as pessoas da importância do seguro, garantindo a proteção familiar, saúde financeira e continuidade dos seus projetos de vida.'
+            ],
+            [
+                'titulo' => 'Visão',
+                'texto'  => 'Ser referência no ramo de Seguros no estado de Rondônia',
+            ],
+            [
+                'titulo' => 'Valores',
+                'texto' => '- ' . implode("\n- ", [
+                    'Comprometimento',
+                    'Transparência',
+                    'Ética',
+                    'Valorização das Pessoas',
+                    'Respeito',
+                ])
+            ]
+        ];
+
+        return view('livewire.pages.sobre', ['valores' => $valores])->layoutData([
             'image' => asset('static/img/banner-home-2.webp'),
-            'description' => 'Desde 1988, somos referência no mercado de seguros, valorizando o esforço por trás do seu patrimônio.'
+            'description' => 'Nosso propósito é Conscientizar as pessoas da importância do seguro, garantindo a proteção familiar, saúde financeira e continuidade dos seus projetos de vida.'
         ]);
     }
 }

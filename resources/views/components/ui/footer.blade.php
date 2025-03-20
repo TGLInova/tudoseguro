@@ -1,10 +1,10 @@
 <x-ui::section variant="primary" class="ui-footer">
     <x-ui::container>
-        <div class="grid lg:grid-cols-4 gap-24 text-sm font-light">
+        <div class="grid lg:grid-cols-4 lg:gap-24 gap-8 text-sm font-light">
             <div>
-                <img src="{{ asset('static/img/logo-inverted.webp') }}">
+                <img src="{{ asset('static/img/logo-inverted.webp') }}" width="300" height="105" class="lg:w-full w-48">
             </div>
-            <div class="ui-footer-item lg:col-span-3 text-lg">
+            <div class="ui-footer-item lg:col-span-3 text-lg max-lg:flex-col">
                 <div class="flex gap-2 items-center">
                     <x-icon name="icon-telefone" class="h-8 w-8 flex-none" />
                     <span>(69) 3443-1175 | (69) 98455-4514</span>

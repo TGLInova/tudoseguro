@@ -1,10 +1,9 @@
 @props(['image' => null, 'containerClass' => '', 'variant' => 'normal'])
 @php
 $_classes = [
-    'bg-cover relative group/hero',
-    'text-white'                => $image,
-    'bg-(image:--bg-image)'     => is_string($image),
-    'metalic'                   => in_array('metalic', (array) $variant)
+    'bg-cover bg-no-repeat bg-center relative group/hero',
+    'text-white bg-(image:--bg-image)'  => $image,
+    'metalic' => in_array('metalic', (array) $variant)
 ];
 @endphp
 <x-bless-ui::wrapper

@@ -1,5 +1,5 @@
 @props(['produtos', 'titulo' => null])
-<x-ui::section variant="primary-400">
+<x-ui::section>
     <x-ui::container >
         @if($titulo)
         <x-ui::h2 class="mb-12">

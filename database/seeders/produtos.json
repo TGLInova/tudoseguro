@@ -1,13 +1,5 @@
 [
     {
-        "id" : 1,
-        "nome": "Seguros Patrimoniais (Empresa, Condomínio e Residência)",
-        "descricao": "Com a contratação dos Seguros Patrimoniais, a sua empresa, residência ou condomínio ficam protegidos contra diversos riscos, além de contar com uma ampla gama de serviços de assistência que facilitam o seu dia-a-dia.",
-        "url": "https://www.multisegseguros.com.br/seguros-patrimoniais-empresa-condominio-e-residencia/",
-        "icone": "icon-patrimonio",
-        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/residencial.jpg"
-    },
-    {
         "id": 2,
         "nome": "Seguros de Riscos Diversos/Equipamentos",
         "descricao": "Seja na agricultura, construção civil, indústria, comércio ou mesmo para utilização particular, a contratação do Seguro de Riscos Diversos para equipamentos é essencial para a proteção contra danos de causa externa que possam advir de sua operação. ",

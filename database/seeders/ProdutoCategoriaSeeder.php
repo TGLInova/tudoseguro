@@ -31,6 +31,10 @@ class ProdutoCategoriaSeeder extends Seeder
             $model->save();
 
             $model->produtos()->sync((array) $map_produtos[$id] ?? []);
+
+            $model->imagem()->firstOrNew([])->fill([
+                'caminho' => 'categorias/produtos.webp'
+            ])->save();
         }
     }
 }

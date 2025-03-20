@@ -11,12 +11,14 @@ Alpine.data('swiper', function (options = {}) {
 
     el.classList.add('swiper', 'swiper-container')
 
-    const swiper = new Swiper(this.$el, {
+
+    const swiper = new Swiper(el, {
         modules: [Navigation, Pagination, Autoplay],
 
         on: {
             init: () => {
-                el.classList.remove('swiper-cloak')
+                console.log(el)
+                this.$el.classList.remove('swiper-cloak')
             },
         },
 
@@ -27,21 +29,23 @@ Alpine.data('swiper', function (options = {}) {
         },
 
         pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
+            el: el.querySelector('.swiper-pagination'),
             clickable: true,
+            type: 'custom',
+            renderCustom: (swiper, current, total) => `<div class="swiper-pagination-container">${current} de ${total}</div>`
         },
 
 
 
         slidesPerView: 6,
         spaceBetween: 30,
-        // loop: true,
         autoplay: {
             delay: 5000,
+            disableOnInteraction: true,
 
         },
-        freeMode: true,
+        loop: false,
+        // freeMode: true,
         paginationClickable: true,
         watchSlidesProgress: true,
         ...options,
