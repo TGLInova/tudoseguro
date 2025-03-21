@@ -26,11 +26,6 @@ class Post extends Model
         return $this->morphOne(Midia::class, 'model');
     }
 
-    public function postCategoria(): BelongsTo
-    {
-        return $this->belongsTo(PostCategoria::class, 'post_categoria_id');
-    }
-
     public function usuario(): BelongsTo
     {
         return $this->belongsTo(Usuario::class);

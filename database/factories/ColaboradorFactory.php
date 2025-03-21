@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\ColaboradorGrupo;
 use App\Models\GrupoColaborador;
+use App\Models\Usuario;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,7 @@ class ColaboradorFactory extends Factory
         return [
             'nome' => fake('pt_BR')->firstName('male'),
             'sobrenome' => fake('pt_BR')->lastName('male'),
-            'colaborador_grupo_id' => fn () => ColaboradorGrupo::inRandomOrder()->value('id'),
+            'usuario_id' => Usuario::factory(),
             'cargo'     => $this->faker->randomElement([
                 'Consultor',
                 'Corretor',

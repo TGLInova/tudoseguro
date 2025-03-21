@@ -2,7 +2,7 @@
 <x-ui::section>
     <x-ui::container >
         @if($titulo)
-        <x-ui::h2 class="mb-12">
+        <x-ui::h2 class="mb-12 text-center">
             {{ $titulo }}
         </x-ui::h2>
         @endif

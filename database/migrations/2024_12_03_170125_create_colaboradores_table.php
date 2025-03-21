@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('sobrenome')->nullable();
             $table->string('cargo')->nullable();
             $table->unsignedInteger('ordem')->nullable();
+            $table->foreignId('usuario_id')->nullable()->constrained('usuarios');
             $table->timestamps();
         });
     }

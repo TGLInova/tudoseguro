@@ -20,7 +20,7 @@ class ProdutoCategoriaSeeder extends Seeder
 
 
         $map_produtos = [
-            1 => [1, 2, 3],
+            1 => [2, 3],
             2 => [5, 6, 7]
         ];
 

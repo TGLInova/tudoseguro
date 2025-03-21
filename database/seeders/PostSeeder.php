@@ -102,6 +102,7 @@ class PostSeeder extends Seeder
         foreach ($items as $id => $item) {
 
             $item['texto'] = null;
+            $item['usuario_id'] ??= 1;
             $imagem = Arr::pull($item, 'imagem');
 
             $file = __DIR__ . '/posts/' . $id . '.html';

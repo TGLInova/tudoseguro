@@ -57,7 +57,7 @@ return [
 
         'input' => [
             'base' => [
-                'w-full border-2 px-4 py-3 inline-flex outline-hidden',
+                'w-full border-2 px-4 py-2 inline-flex outline-hidden',
                 'rounded-xs'
             ],
             'variants' => [
@@ -227,7 +227,7 @@ return [
 
                 'metalic' => null,
 
-                'primary' => 'bg-primary/80 bg-blend-multiply'
+                'primary' => 'bg-primary bg-blend-multiply text-white'
             ]
         ]
 

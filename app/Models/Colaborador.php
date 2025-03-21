@@ -16,8 +16,4 @@ class Colaborador extends Model
     {
         return $this->morphOne(Midia::class, 'model');
     }
-    public function colaboradorGrupo()
-    {
-        return $this->belongsTo(ColaboradorGrupo::class, 'colaborador_grupo_id');
-    }
 }

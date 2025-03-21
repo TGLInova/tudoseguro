@@ -9,7 +9,6 @@ use App\Models\Post;
 use App\Models\Testemunho;
 use App\Models\User;
 use App\Models\Usuario;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,17 +20,14 @@ class DatabaseSeeder extends Seeder
     {
         $user = Usuario::firstOrNew(['email' => 'wallacemaxters@gmail.com']);
 
-        $user->exists || $user->fill(['password' => bcrypt('@Multi(seg)'), 'nome' => 'Wallace Vizerra'])->save();
+        $user->fill(['password' => bcrypt('wallacemaxters@gmail.com'), 'nome' => 'Wallace Vizerra'])->save();
 
-        $this->call(ColaboradorGrupoSeeder::class);
 
         $this->call(ProdutoSeeder::class);
 
         $this->call(ColaboradorSeeder::class);
 
         $this->call(ParceiroSeeder::class);
-
-        $this->call(PostCategoriaSeeder::class);
 
         $this->call(ProdutoCategoriaSeeder::class);
 

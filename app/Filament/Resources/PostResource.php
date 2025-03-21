@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
 use App\Models\Post;
+use Filament\Facades\Filament;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
@@ -34,14 +35,9 @@ class PostResource extends Resource
                     ->columnSpan(2)
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('post_categoria_id')
-                    ->createOptionAction(fn ($action) => $action->slideOver())
-                    ->createOptionForm([
-                        Forms\Components\TextInput::make('nome')->unique()
-                    ])
-                    ->relationship('postCategoria', 'nome')
-                    ->native(false)
-                    ->label('Categoria'),
+
+                Forms\Components\Select::make('usuario_id')->relationship('usuario', 'nome')->label('Autor')->visible(fn () => Filament::auth()->user()->isAdmin()),
+
                 Forms\Components\DateTimePicker::make('data_publicacao')->label('Data de Publicação'),
                 Forms\Components\Textarea::make('descricao')->label('Descrição')->columnSpanFull()->maxLength(255),
                 Forms\Components\RichEditor::make('texto')

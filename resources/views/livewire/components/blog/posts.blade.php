@@ -1,10 +1,13 @@
 <div>
-    <x-ui::h2 class='text-center mb-12'>
-        Confira mais <strong>novidades, notícias e atualizações</strong> do mercado
-    </x-ui::h2>
+    <form class="flex mb-16" wire:submit="$refresh">
+        <x-ui::input placeholder="Pesquise um assunto..." wire:model="busca" />
+        <x-ui::button variant="primary" type="submit">
+            <x-icon name="heroicon-o-magnifying-glass" class="h-7 w-7" />
+        </x-ui::button>
+    </form>
     <div class="grid lg:grid-cols-3 gap-12">
         @foreach ($posts as $post)
-            <x-post.preview-card :$post :wire:key="sprintf('post-%d', $post->id)" />
+            <x-post.card :$post wire:key="{!! sprintf('post-%d', $post->id) !!}" class="animate-fade-up" />
         @endforeach
     </div>
     <div class="text-center mt-8">
