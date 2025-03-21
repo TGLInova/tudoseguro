@@ -58,10 +58,10 @@ return [
         'input' => [
             'base' => [
                 'w-full border-2 px-4 py-2 inline-flex outline-hidden',
-                'rounded-xs'
+                'rounded-lg'
             ],
             'variants' => [
-                'normal'  => 'border-zinc-400 bg-zinc-300',
+                'normal'  => 'border-neutral-300 bg-neutral-200',
                 'primary' => 'border-primary'
             ]
         ],
