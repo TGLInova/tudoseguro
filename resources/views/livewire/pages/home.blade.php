@@ -8,7 +8,7 @@
                     Proteção para a carreira dos profissionais da saúde.
                 </x-ui::h1>
                 <x-ui::button href="#formulario" class="animate-duration-700" :variant="['primary', 'base']">
-                    Entrar em contato com a Multiseg
+                    Entrar em contato
                 </x-ui::button>
             </header>
         </x-ui::container>

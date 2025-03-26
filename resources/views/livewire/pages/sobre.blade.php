@@ -33,7 +33,7 @@
                 </p>
             </div>
             <div>
-                <img alt="Multiseg" title="Multiseg" width="560" height="359" loading="eager"
+                <img width="560" height="359" loading="eager"
                     class="animate-delay-700 w-full h-full object-cover rounded-xl shadow"
                     src="{{ asset('static/img/equipe.webp') }}" x-bind:class="{ 'animate-fade-right': enable }">
             </div>
