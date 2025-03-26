@@ -22,8 +22,18 @@ class BigCard extends Component
      */
     public function render(): View
     {
+        $setting = app(SiteSettings::class);
+
+        $items = array_filter([
+            'icon-mapa' => $setting->endereco,
+            'icon-telefone' => $setting->telefoneComMascara() . ' | ' . $setting->celularComMascara(),
+            'heroicon-o-envelope' => $setting->email,
+            'icon-instagram'    => $setting->instagram
+        ]);
+
         return view('components.contato.big-card', [
-            'siteSettings' => app(SiteSettings::class)
+            'siteSettings' => $setting,
+            'items' => $items
         ]);
     }
 }

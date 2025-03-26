@@ -16,7 +16,5 @@
         </x-ui::container>
     </x-ui::section>
 
-    <x-colaborador.section />
-
-    <x-contato.card :subtitle-on-top="true" subtitle="Gostou de algum artigo e quer saber mais?" />
+    <x-colaborador.section :show-more="false" />
 </div>

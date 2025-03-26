@@ -194,8 +194,7 @@
                     800: {
                         slidesPerView: 4
                     }
-                }
-            }"
+                }}"
                 class="animate-delay-300 max-lg:h-[45rem]">
                 @foreach ($posts as $post)
                     <x-ui::swiper.item>

@@ -17,7 +17,6 @@ Alpine.data('swiper', function (options = {}) {
 
         on: {
             init: () => {
-                console.log(el)
                 this.$el.classList.remove('swiper-cloak')
             },
         },

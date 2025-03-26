@@ -11,7 +11,7 @@ class SiteSettings extends Settings
 
     public string $telefone;
 
-    public string $whatsapp;
+    public string $celular;
 
     public string $email;
 
@@ -26,9 +26,9 @@ class SiteSettings extends Settings
         return app(Masker::class)->dynamic($this->telefone, ['(00) 00000-0000', '(00) 0000-0000']);
     }
 
-    public function whatsappComMascara()
+    public function celularComMascara()
     {
-        return app(Masker::class)->dynamic($this->whatsapp, ['(00) 00000-0000', '(00) 0000-0000']);
+        return app(Masker::class)->dynamic($this->celular, ['(00) 00000-0000', '(00) 0000-0000']);
     }
 
     public function urlWhatsapp()
