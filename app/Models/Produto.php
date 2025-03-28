@@ -14,9 +14,9 @@ class Produto extends Model
 {
     use HasScopeAtivo;
 
-    protected $fillable = ['nome', 'descricao', 'icone', 'texto', 'ativo', 'ordem'];
+    protected $fillable = ['nome', 'descricao', 'icone', 'metadados', 'ativo', 'ordem'];
 
-    protected $casts = ['ativo' => 'bool'];
+    protected $casts = ['ativo' => 'bool', 'metadados' => 'collection'];
 
     public function url(): Attribute
     {

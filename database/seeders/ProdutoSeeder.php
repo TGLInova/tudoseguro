@@ -28,12 +28,6 @@ class ProdutoSeeder extends Seeder
 
             $produto->fill($item)->save();
 
-            $texto = @file_get_contents(__DIR__ . '/produtos/' . $produto->id . '.html');
-
-            $produto->fill([
-                'texto' => $texto
-            ])->save();
-
             if ($imagem) {
 
                 $caminho = 'produtos/' . $produto->id . '_' . basename($imagem);

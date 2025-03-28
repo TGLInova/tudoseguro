@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nome', 100);
             $table->string('icone', 50)->nullable();
             $table->string('descricao', 500)->nullable();
-            $table->text('texto')->nullable();
+            $table->json('metadados')->nullable();
             $table->integer('ordem')->nullable();
             $table->timestamps();
         });

@@ -1,6 +1,9 @@
 <div>
-    <x-ui::hero :image="asset('/static/img/banner-home.webp')" class="max-lg:bg-[position:70%_bottom]"
-        container-class="flex flex-col items-center relative" :variant="['large', 'metalic']">
+    <x-ui::hero
+        :image="asset('/static/img/banner-home.webp')"
+        class="max-lg:bg-[position:70%_bottom]"
+        container-class="flex flex-col items-center relative"
+        :variant="['large', 'metalic']">
         <x-icon name="icon-seta-baixo-circulo" class="h-12 w-12 absolute bottom-0 translate-y-1/2 lg:hidden" />
         <x-ui::container class="flex items-center grow">
             <header class="space-y-6 text-white lg:col-span-3 lg:w-1/3" x-bind:class="{ '*:animate-fade-up': enable }">

@@ -110,8 +110,8 @@ return [
             'base' => 'py-12 lg:py-20',
             'variants' => [
                 'normal' => '',
-                'neutral'  => 'bg-neutral-100',
-                'grey'     => 'bg-neutral-300',
+                'neutral'  => 'bg-zinc-100',
+                'grey'     => 'bg-zinc-300',
                 'primary-400' => 'text-white bg-primary-400',
                 'primary' => 'text-white bg-primary-500',
                 'primary-600' => 'text-white bg-primary-600'
@@ -122,8 +122,8 @@ return [
             'base' => [ 'p-6', 'rounded-lg shadow'],
             'variants' => [
                 'normal'  => [],
-                'neutral' => 'bg-neutral-200',
-                'grey'    => 'bg-neutral-300 shadow-sm',
+                'neutral' => 'bg-zinc-200',
+                'grey'    => 'bg-zinc-300 shadow-sm',
                 'primary' => ['bg-primary-500 text-white'],
                 'bordered' => ['border-2 border-primary-400'],
                 'bordered-200' => ['border border-primary-200'],

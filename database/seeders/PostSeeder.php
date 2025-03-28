@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Post;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -19,9 +20,9 @@ class PostSeeder extends Seeder
             1 => [
                 'destaque'        => true,
                 'data_publicacao' => '2019-10-16',
-                'titulo' => 'Como a parceria com a Multiseg Seguros pode otimizar os resultados da sua empresa',
+                'titulo' => 'Descubra o seu perfil financeiro',
                 'descricao' => 'Você sabe qual é o seu perfil financeiro? Não? Fique tranquilo, pois este artigo irá ajudá-lo a identificar seu perfil e aprimorar sua vida financeira.',
-                'imagem'    => 'https://www.multisegseguros.com.br/wp-content/uploads/2019/10/como-aparcewria-coom-a-multiseg-seguros-pode-otimiza-os-resultado-da-sua-empresa.png',
+                'imagem'    => 'posts/1.webp',
             ],
         ];
 
