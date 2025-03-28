@@ -12,6 +12,6 @@
     </figure>
     <h4 class="text-xl leading-snug grow">{{ $post->titulo }}</h4>
     <x-ui::button variant="primary" :href="$post->url">
-        Clique e leia no Blog
+        Leia mais
     </x-ui::button>
 </article>
