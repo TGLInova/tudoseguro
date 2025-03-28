@@ -115,10 +115,13 @@
 
         <x-ui::container>
             <div class="grid lg:grid-cols-3 gap-12">
-                <div x-bind:class="{ 'animate-fade-left': animate }">
-                    <x-ui::h2 class="mb-5">Somos <strong>especialistas</strong> em proteger a carreira e o futuro
+                <div class="space-y-5" x-bind:class="{ 'animate-fade-left': animate }">
+                    <x-ui::h2>Somos <strong>especialistas</strong> em proteger a carreira e o futuro
                         financeiro dos <strong>profissionais liberais</strong>.</x-ui::h2>
                     <p>Conheça um portfólio de proteções para você trabalhar com confiança!</p>
+                    <x-ui::button wire:navigate :href="route('produtos')">
+                        Proteger minha carreira
+                    </x-ui::button>
                 </div>
                 <div class="flex lg:col-span-2 justify-center">
                     @foreach ([1, 2, 3] as $i)
@@ -130,6 +133,7 @@
                             style="--delay-value: {{ $i * 300 }}ms">
                     @endforeach
                 </div>
+
             </div>
         </x-ui::container>
     </x-ui::section>
@@ -144,8 +148,8 @@
                     <p>Descontos em farmácias, clínicas e academias.</p>
                 </div>
                 <div class='space-y-6'>
-                    <x-ui::input variant="transparent" />
-                    <x-ui::input variant="transparent" />
+                    <x-ui::input variant="transparent" placeholder="Nome:" />
+                    <x-ui::input variant="transparent" placeholder="CPF:" />
                     <x-ui::button variant="primary-400" class="w-full">
                         Gerar meu cartão
                     </x-ui::button>
@@ -183,7 +187,7 @@
     <x-sections.structure />
 
     <x-ui::section>
-        <x-ui::container>
+        <x-ui::container variant="large">
             <x-ui::h2 class="text-center mb-12">
                 Notícias e novidade do nosso <strong>Blog</strong>!
             </x-ui::h2>

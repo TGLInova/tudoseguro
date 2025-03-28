@@ -16,6 +16,7 @@ return [
             'base'   => 'px-5 lg:px-0 mx-auto w-full',
             'variants' => [
                 'normal' => ['max-w-6xl'],
+                'large'  => ['max-w-7xl'],
                 'compact' => ['max-w-4xl']
             ]
         ],
@@ -27,9 +28,9 @@ return [
                 'rounded-sm'
             ],
             'variants' => [
-                'normal'      => 'text-base',
+                'normal'      => 'bg-primary hover:bg-primary-200 text-white border border-white',
                 'primary'     => 'bg-primary hover:bg-primary-200 text-white border border-white',
-                'primary-400' => 'text-white bg-primary-400 border-2 border-transparent hover:bg-transparent hovertext-primary-200 hover:border-current',
+                'primary-400' => 'text-white bg-primary-400 border-2 border-transparent hover:bg-transparent hover:text-primary-200 hover:border-current',
                 'small'       => 'text-xs px-2! py-1.5!',
                 'large'       => 'text-lg px-6! py-2.5!'
             ]
@@ -122,8 +123,8 @@ return [
             'base' => [ 'p-6', 'rounded-lg shadow'],
             'variants' => [
                 'normal'  => [],
-                'neutral' => 'bg-zinc-200',
-                'grey'    => 'bg-zinc-300 shadow-sm',
+                'neutral' => 'bg-slate-200',
+                'grey'    => 'bg-slate-300 shadow-sm',
                 'primary' => ['bg-primary-500 text-white'],
                 'bordered' => ['border-2 border-primary-400'],
                 'bordered-200' => ['border border-primary-200'],
@@ -222,7 +223,7 @@ return [
 
                 'metalic' => null,
 
-                'primary' => 'bg-primary bg-blend-multiply text-white'
+                'primary' => 'text-white bg-primary bg-blend-multiply'
             ]
         ]
 

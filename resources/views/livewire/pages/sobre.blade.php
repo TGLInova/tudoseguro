@@ -1,11 +1,11 @@
 <div>
     <x-ui::hero :image="asset('/static/img/banner-sobre-2.webp')" class="lg:bg-[center_5%] !bg-top max-lg:bg-[size:auto_136%]" container-class="flex flex-col" :variant="['normal', 'metalic']">
         <x-ui::container class="flex items-center grow">
-            <header class="space-y-6 text-white lg:col-span-3 lg:w-1/3" x-bind:class="{ '*:animate-fade-up': enable }">
+            <header class="space-y-6 text-white lg:w-1/4" x-bind:class="{ '*:animate-fade-up': enable }">
                 <x-ui::h1 class="animate-duration-500">
-                    Conheça a Tudo Seguro
+                    Conheça a<br> Tudo Seguro
                 </x-ui::h1>
-                <p>Nossa história, valores, missão e objetivos!</p>
+                <p class="text-lg">Nossa história, valores, missão e objetivos!</p>
             </header>
         </x-ui::container>
     </x-ui::hero>

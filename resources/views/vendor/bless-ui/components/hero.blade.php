@@ -1,10 +1,13 @@
 @props(['image' => null, 'containerClass' => '', 'variant' => 'normal'])
 @php
+
 $_classes = [
     'bg-cover bg-no-repeat bg-center relative group/hero',
     'text-white bg-(image:--bg-image)'  => $image,
-    'metalic' => in_array('metalic', (array) $variant)
+    'metalic' => in_array('metalic', (array) $variant),
+    'primary-overlay' => in_array('primary', (array) $variant)
 ];
+
 @endphp
 <x-bless-ui::wrapper
     tag="section"

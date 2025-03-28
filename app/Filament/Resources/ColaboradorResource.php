@@ -35,7 +35,6 @@ class ColaboradorResource extends Resource
                     FileUpload::make('caminho')->directory('midias/colaboradores')->image()->imageEditor()->imageCropAspectRatio('3:4')
                 ])->relationship('imagem')->columnSpanFull()->label('Imagem'),
 
-                Forms\Components\Select::make('colaborador_grupo_id')->relationship('colaboradorGrupo', 'nome')->label('Grupo'),
                 Forms\Components\TextInput::make('nome')
                     ->required()
                     ->maxLength(255),
