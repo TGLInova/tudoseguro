@@ -9,6 +9,9 @@
                 @livewire('components.formulario-contato-completo', ['dark' => $variant === 'primary-400'])
             </div>
             <div class="space-y-5">
+                <x-ui::h2 class="text-center mb-6">
+                    Entre em contato
+                </x-ui::h2>
                 @foreach($items as $icon => $item)
                 <div class="flex items-center gap-4 px-6 h-20 rounded-lg bg-neutral-200 border-2 border-neutral-300">
                     <x-icon class="h-10 w-10 flex-none text-primary-500" :name="$icon" />
