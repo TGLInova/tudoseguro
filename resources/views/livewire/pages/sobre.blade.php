@@ -74,7 +74,7 @@
             <x-ui::swiper options="{ slidesPerView: 1.45, spaceBetween: 8, breakpoints: { 800: { slidesPerView: 3, spaceBetween: 64, } } }">
                 @foreach ($valores as $valor)
                     <x-ui::swiper.item class="max-lg:px-3">
-                        <x-ui::card variant="neutral" class="space-y-4 flex flex-col items-center h-72">
+                        <x-ui::card variant="gray-200" class="space-y-4 flex flex-col items-center h-72">
                             <x-icon name="icon-check" class="h-11 w-11 text-primary-400" />
                             <h3 class="text-black text-2xl text-center">{{ $valor['titulo'] }}</h3>
                             <div class='[&>ul]:list-disc [&>ul]:text-left [&>ul]:list-inside w-full text-center leading-snug'>{!! Str::markdown($valor['texto']) !!}</div>

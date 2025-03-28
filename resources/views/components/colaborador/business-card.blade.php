@@ -1,4 +1,4 @@
-<div class="grid grid-cols-7 gap-8 p-6 group-[.swiper-slide-active]:bg-neutral-300 bg-neutral-200 duration-300">
+<div class="grid grid-cols-7 gap-8 p-6 group-[.swiper-slide-active]:bg-gray-300 bg-gray-200 duration-300">
     <div class="flex flex-col justify-center col-span-4">
         <x-ui::h4 class="font-bold">{{ $colaborador->nome }} {{ $colaborador->sobrenome }}</x-ui::h4>
         <p class="text-lg font-light">{{ $colaborador->cargo }}</p>

@@ -23,9 +23,9 @@ return [
 
         'button' => [
             'base'   => [
-                'duration-500 inline-flex outline-hidden items-center justify-center active:-translate-y-px disabled:opacity-40',
+                'duration-500 inline-flex outline-hidden items-center justify-center active:-trangray-y-px disabled:opacity-40',
                 'px-4 py-2',
-                'rounded-sm'
+                'rounded-lg'
             ],
             'variants' => [
                 'normal'      => 'bg-primary hover:bg-primary-200 text-white border border-white',
@@ -38,7 +38,7 @@ return [
 
         'select' => [
             // 'wrapper' => 'relative flex items-center',
-            // 'arrow'   => 'absolute right-3 pointer-events-none dark:text-white text-neutral-800',
+            // 'arrow'   => 'absolute right-3 pointer-events-none dark:text-white text-gray-800',
             'base' => [
                 'relative',
                 'w-full',
@@ -51,18 +51,18 @@ return [
                 '[&>svg]:right-2 [&>svg]:absolute [&>svg]:pointer-events-none'
             ],
             'variants' => [
-                'normal'  => 'border-neutral-300',
+                'normal'  => 'border-gray-300',
                 'primary' => 'border-primary',
             ]
         ],
 
         'input' => [
             'base' => [
-                'w-full border-2 px-4 py-2 inline-flex outline-hidden',
+                'w-full border-[2px] px-4 py-2.5 inline-flex outline-hidden',
                 'rounded-lg'
             ],
             'variants' => [
-                'normal'  => 'border-neutral-300 bg-neutral-200',
+                'normal'  => 'border-gray-300 bg-gray-200 placeholder:text-gray-400',
                 'primary' => 'border-primary'
             ]
         ],
@@ -74,7 +74,7 @@ return [
                 'rounded-lg'
             ],
             'variants' => [
-                'normal'  => 'border-neutral-300 bg-neutral-200',
+                'normal'  => 'border-gray-300 bg-gray-200 placeholder:text-gray-400',
                 'primary' => 'border-primary'
             ]
         ],
@@ -93,7 +93,7 @@ return [
             'base' => [
                 'rounded-full',
                 'aspect-square',
-                'bg-neutral-200',
+                'bg-gray-200',
                 'flex items-center justify-center',
                 'overflow-hidden',
                 $shadow,
@@ -110,25 +110,24 @@ return [
         'section' => [
             'base' => 'py-12 lg:py-20',
             'variants' => [
-                'normal' => '',
-                'neutral'  => 'bg-zinc-100',
-                'grey'     => 'bg-zinc-300',
-                'primary-400' => 'text-white bg-primary-400',
-                'primary' => 'text-white bg-primary-500',
-                'primary-600' => 'text-white bg-primary-600'
+                'gray'              => 'bg-gray-200',
+                'gray-300'          => 'bg-gray-300',
+                'primary-400'       => 'text-white bg-primary-400',
+                'primary'           => 'text-white bg-primary-500',
+                'primary-600'       => 'text-white bg-primary-600'
             ]
         ],
 
         'card' => [
-            'base' => [ 'p-6', 'rounded-lg shadow'],
+            'base' => [ 'p-4', 'rounded-lg shadow'],
             'variants' => [
-                'normal'  => [],
-                'neutral' => 'bg-slate-200',
-                'grey'    => 'bg-slate-300 shadow-sm',
-                'primary' => ['bg-primary-500 text-white'],
-                'bordered' => ['border-2 border-primary-400'],
-                'bordered-200' => ['border border-primary-200'],
-                'danger'       => ['bg-red-400 text-white']
+                'normal'        => 'bg-gray-200',
+                'gray-200'      => 'bg-gray-200',
+                'gray-300'      => 'bg-gray-300',
+                'primary'       => ['bg-primary-500 text-white'],
+                'bordered'      => ['border-2 border-primary-400'],
+                'bordered-200'  => ['border border-primary-200'],
+                'danger'        => ['bg-red-400 text-white']
 
             ]
         ],
@@ -147,7 +146,7 @@ return [
                 'checked:before:block checked:rotate-45'
             ],
             'variants' => [
-                'normal'  => 'border-neutral-500',
+                'normal'  => 'border-gray-500',
                 'primary' => 'border-primary'
             ]
         ],
@@ -159,7 +158,7 @@ return [
                 'rounded-full duration-200 checked:bg-blue-500 checked:border-transparent',
             ],
             'variants' => [
-                'normal'  => 'border-neutral-500',
+                'normal'  => 'border-gray-500',
                 'primary' => 'border-primary'
             ]
         ],
@@ -211,7 +210,7 @@ return [
             ],
 
             'variants' => [
-                'normal' => 'text-neutral-700 [&_.ui-navbar-logo]:text-primary-500'
+                'normal' => 'text-gray-700 [&_.ui-navbar-logo]:text-primary-500'
             ]
         ],
 

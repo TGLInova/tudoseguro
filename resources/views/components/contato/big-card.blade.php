@@ -13,7 +13,7 @@
                     Entre em contato
                 </x-ui::h2>
                 @foreach($items as $icon => $item)
-                <div class="flex items-center gap-4 px-6 h-20 rounded-lg bg-neutral-200 border-2 border-neutral-300">
+                <div class="flex items-center gap-4 px-5 h-20 rounded-lg bg-gray-200 border-2 border-gray-300">
                     <x-icon class="h-10 w-10 flex-none text-primary-500" :name="$icon" />
                     <div>{{ $item }}</div>
                 </div>

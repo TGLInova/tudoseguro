@@ -12,6 +12,8 @@ class FormularioContatoCompleto extends Component
 
     public $dark = true;
 
+    public int $grid = 1;
+
     protected $rules = [
         'form.nome' => ['required', 'string', 'max:100'],
         'form.email' => ['required', 'email'],

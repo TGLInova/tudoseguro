@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('telefone', 15)->nullable();
             $table->string('email')->nullable();
             $table->string('assunto', 350)->nullable();
+            $table->time('melhor_horario')->nullable();
+            $table->string('profissao')->nullable();
             $table->text('mensagem')->nullable();
             $table->timestamps();
         });

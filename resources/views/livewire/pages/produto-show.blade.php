@@ -24,7 +24,7 @@
                 <x-ui::h2 class='text-center font-semibold'>Para quem é indicado:</x-ui::h2>
                 <div class="grid lg:grid-cols-3 gap-8">
                     @foreach ($produto->metadados->get('publico_alvo') as $item)
-                        <x-ui::card variant="neutral">
+                        <x-ui::card>
                             <header class="flex gap-3 items-center mb-3">
                                 @if ($item['icone'])
                                     <x-icon :name="$item['icone']" class="h-12 w-12 text-primary-400 flex-none" />
@@ -38,11 +38,11 @@
             </x-ui::container>
         </x-ui::section>
 
-        <section class="bg-slate-200">
+        <section class="bg-gray-200">
             <x-ui::container class="space-y-6 grid lg:grid-cols-2 gap-16 items-center">
                 <div class='space-y-4 py-12'>
                     <x-ui::h2 class='font-semibold'>Benefícios do {{ $produto->nome }}</x-ui::h2>
-                    <div class="prose marker:text-slate-400 marker:text-sm">{!! data_get($produto->metadados, 'beneficios.texto') !!}</div>
+                    <div class="prose marker:text-gray-400 marker:text-sm">{!! data_get($produto->metadados, 'beneficios.texto') !!}</div>
                     <x-ui::button variant="primary">
                         Contratar agora
                     </x-ui::button>
@@ -63,12 +63,12 @@
                 <x-ui::h2 class='text-center font-semibold'>Coberturas e Assistências de {{ $produto->nome }}</x-ui::h2>
                 <div class="grid lg:grid-cols-2 gap-16">
                     @foreach ($produto->metadados->get('coberturas') as $item)
-                        <x-ui::card variant="neutral" class="space-y-4">
+                        <x-ui::card class="space-y-4">
                             @if ($item['icone'])
                                 <x-icon :name="$item['icone']" class="h-12 w-12 text-primary-400 flex-none" />
                             @endif
                             <h4 class="font-bold text-2xl">{{ $item['titulo'] }}:</h4>
-                            <ul class="list-disc list-inside marker:text-slate-400 marker:text-sm">
+                            <ul class="list-disc list-inside marker:text-gray-400 marker:text-sm">
                                 @foreach ($item['itens'] as $texto)
                                     <li>{{ $texto }}</li>
                                 @endforeach

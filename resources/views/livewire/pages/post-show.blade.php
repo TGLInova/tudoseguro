@@ -7,7 +7,7 @@
         </header>
     </x-ui::hero>
     <x-ui::container>
-        <div class="p-5 rounded-lg shadow bg-slate-100 -translate-y-1/2">
+        <div class="p-5 rounded-lg shadow bg-gray-100 -translate-y-1/2">
             <div class="flex gap-3 justify-between w-full items-center">
                 <em class="max-lg:hidden">#Artigo</em>
                 <div class="flex items-center gap-4">

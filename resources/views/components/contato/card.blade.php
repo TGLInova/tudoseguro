@@ -1,8 +1,6 @@
-<x-ui::section variant="neutral">
+<x-ui::section >
     <x-ui::container>
-        <div class="grid lg:grid-cols-2 items-center">
-            <div></div>
-            <div></div>
-        </div>
+        <x-ui::h2 class='text-center mb-6'>Entre em contato conosco:</x-ui::h2>
+       @livewire('components.formulario-contato-completo', ['grid' => 2])
     </x-ui::container>
 </x-ui::section>

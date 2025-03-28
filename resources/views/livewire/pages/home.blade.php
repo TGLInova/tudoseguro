@@ -88,7 +88,7 @@
                 @foreach ($testemunhos as $testemunho)
                     <x-ui::swiper.item>
                         <div
-                            class="p-8 bg-neutral-200 lg:space-y-8 rounded-xl shadow-lg flex flex-col justify-center items-center">
+                            class="p-8 bg-gray-300 lg:space-y-8 rounded-xl shadow-lg flex flex-col justify-center items-center">
                             <header class="flex gap-4 items-center justify-center">
                                 <img class="w-12 h-12 flex-none rounded-full shadow-sm border-4 border-primary-400"
                                     src="{{ $testemunho->imagem->url }}" width="50" height="50"
@@ -211,5 +211,9 @@
             </x-ui::swiper>
         </x-ui::container>
     </x-ui::section>
+
+    <x-contato.card />
+
+
 
 </div>

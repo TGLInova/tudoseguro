@@ -1,4 +1,4 @@
-<article {{ $attributes->class('flex flex-col gap-4 h relative duration-200 bg-slate-200 p-5 rounded-xl shadow h-96') }}>
+<article {{ $attributes->class('flex flex-col gap-4 h relative duration-200 bg-gray-200 p-5 rounded-xl shadow h-96') }}>
     <header class="flex gap-3 items-center">
         <img src="{!! $post->usuario?->getFilamentAvatarUrl() !!}" class="h-9 w-9 rounded-full object-cover flex-none">
         <div class="leading-none">
