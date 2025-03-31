@@ -19,11 +19,11 @@
                     @endforeach
                     <x-ui::swiper.item>
                         <x-ui::card :href="route('produtos')"
-                            class="flex-none flex flex-col w-full items-start space-y-4 h-80 duration-500 border-2 border-primary-200 hover:bg-primary-500">
-                            <x-icon name="heroicon-o-magnifying-glass"
+                            class="flex-none flex flex-col w-full items-start justify-end space-y-4 h-80 duration-500 border-2 border-primary-200 hover:bg-white">
+                            <x-icon name="icon-seguranca"
                                 class="lg:w-10 lg:h-10 h-8 w-8 flex-none text-primary-200" />
-                            <div class="text-2xl flex items-center grow">
-                                Conferir todas as nossas soluções.
+                            <div class="text-2xl flex items-center">
+                                Ver todas as soluções.
                             </div>
                         </x-ui::card>
                     </x-ui::swiper.item>
