@@ -158,18 +158,18 @@
         </x-ui::container>
     </x-ui::section>
 
-    <div class="py-8">
-        <x-ui::container class="grid grid-cols-4 gap-8 items-center">
+    <div class="py-6 bg-gray-200">
+        <x-ui::container class="grid grid-cols-5 gap-6 items-center">
             <x-ui::h3 class="max-lg:hidden">
                 Conheça alguns de
                 <span class="font-semibold">nossos parceiros</span>
             </x-ui::h3>
-            <div class="col-span-3">
+            <div class="col-span-4">
                 <x-ui::swiper class="w-full" swiper-wrapper-class="items-center"
                     options="{
                     slidesPerView: 5,
                     breakpoints: {
-                        800: { slidesPerView: 5, spaceBetween: 35, loop: true, autoplay: true }
+                        800: { slidesPerView: 6, spaceBetween: 45, loop: true, autoplay: true }
                     }
                 }">
                     @foreach ($parceiros as $parceiro)
