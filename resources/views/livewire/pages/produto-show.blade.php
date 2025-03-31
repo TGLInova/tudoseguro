@@ -1,5 +1,5 @@
 <div>
-    <x-ui::hero :image="$produto->imagem->url" container-class="flex flex-col" :variant="['primary', 'normal']">
+    <x-ui::hero :image="$produto->imagem?->url" container-class="flex flex-col" :variant="['primary', 'normal']">
         <x-ui::section class="flex items-center h-full">
             <x-ui::container class="text-center space-y-5" variant="compact">
                 <x-ui::h1 class="mb-5">{{ $produto->nome }}</x-ui::h1>
