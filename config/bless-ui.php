@@ -31,7 +31,7 @@ return [
                 'normal'      => 'bg-primary hover:bg-primary-200 text-white border border-white',
                 'primary'     => 'bg-primary hover:bg-primary-200 text-white border border-white',
                 'primary-400' => 'text-white bg-primary-400 border-2 border-transparent hover:bg-transparent hover:text-primary-200 hover:border-current',
-                'small'       => 'text-xs px-2! py-1.5!',
+                'small'       => 'text-xs px-3! py-1.5! !rounded-sm',
                 'large'       => 'text-lg px-6! py-2.5!'
             ]
         ],
