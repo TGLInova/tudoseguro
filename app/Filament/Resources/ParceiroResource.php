@@ -21,7 +21,7 @@ class ParceiroResource extends Resource
 {
     protected static ?string $model = Parceiro::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-group';
+    protected static ?string $navigationIcon = 'icon-parceiro';
 
     public static function form(Form $form): Form
     {

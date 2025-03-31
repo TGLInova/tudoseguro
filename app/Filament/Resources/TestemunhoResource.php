@@ -24,7 +24,7 @@ class TestemunhoResource extends Resource
 {
     protected static ?string $model = Testemunho::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left';
+    protected static ?string $navigationIcon = 'icon-quote';
 
     public static function form(Form $form): Form
     {

@@ -21,7 +21,11 @@ class PostResource extends Resource
 {
     protected static ?string $model = Post::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'icon-documento';
+
+    protected static ?string $pluralModelLabel = 'Publicações';
+
+    protected static ?string $modelLabel = 'Colaborador';
 
     public static function form(Form $form): Form
     {
