@@ -26,7 +26,7 @@ class Usuario extends Authenticatable implements FilamentUser, HasName, HasAvata
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nome',
         'email',
         'password',
     ];
