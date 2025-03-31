@@ -81,14 +81,17 @@
 
     <x-ui::section x-data="{ enable: false }" x-intersect.full:enter="enable = true"
         x-intersect.full:leave="enable = false" variant="neutral">
+
         <x-ui::container variant="compact" class="space-y-12" x-bind:class="{ '*:animate-fade-up': enable }">
+
             <x-ui::h2 class="text-center">Veja o que os nossos clientes falam:</x-ui::h2>
+
             <x-ui::swiper
                 options="{
                     slidesPerView: 1,
-                    direction: 'horizontal',
                 }"
-                class="animate-delay-300 max-lg:h-[45rem]">
+                class="animate-delay-300">
+
                 @foreach ($testemunhos as $testemunho)
                     <x-ui::swiper.item>
                         <div
@@ -107,18 +110,23 @@
             </x-ui::swiper>
 
             <div class="text-center animate-delay-700">
-                <x-ui::button variant="primary">
-                    Entrar em contato com a nossa equipe
+                <x-ui::button variant="primary" href="#formulario">
+                    <span class="max-lg:hidden">
+                        Entrar em contato com a nossa equipe
+                    </span>
+                    <span class="lg:hidden">Solicitar uma cotação</span>
                 </x-ui::button>
             </div>
+
         </x-ui::container>
+
     </x-ui::section>
 
     <x-ui::section x-data="{ animate: false }" x-intersect.half:enter="animate = true"
-        x-intersect.half:leave="animate = false">
+        x-intersect.half:leave="animate = false" >
 
         <x-ui::container>
-            <div class="grid lg:grid-cols-3 gap-12">
+            <div class="grid lg:grid-cols-3 grid-cols-1 gap-12">
                 <div class="space-y-5" x-bind:class="{ 'animate-fade-left': animate }">
                     <x-ui::h2>Somos <strong>especialistas</strong> em proteger a carreira e o futuro
                         financeiro dos <strong>profissionais liberais</strong>.</x-ui::h2>
@@ -144,12 +152,12 @@
     <x-colaborador.section />
     <x-ui::section variant="primary">
         <x-ui::container>
-            <div class="grid grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 grid-cols-1 gap-12 items-center">
                 <div>
-                    <x-ui::h2>
-                        Cartão de Benefícios <strong>Tudo Seguro</strong>.
+                    <x-ui::h2 class="max-lg:text-center">
+                        Cartão de Benefícios <strong class="max-lg:text-6xl">Tudo Seguro</strong>.
                     </x-ui::h2>
-                    <p>Descontos em farmácias, clínicas e academias.</p>
+                    <p class="max-lg:text-center">Descontos em farmácias, clínicas e academias.</p>
                 </div>
                 <div class='space-y-6'>
                     <x-ui::input variant="transparent" placeholder="Nome:" />
@@ -163,15 +171,15 @@
     </x-ui::section>
 
     <div class="py-6 bg-gray-200">
-        <x-ui::container class="grid grid-cols-5 gap-6 items-center">
-            <x-ui::h3 class="max-lg:hidden">
+        <x-ui::container class="grid lg:grid-cols-5 grid-cols-3 gap-6 items-center">
+            <x-ui::h3 class="max-lg:text-sm">
                 Conheça alguns de
                 <span class="font-semibold">nossos parceiros</span>
             </x-ui::h3>
-            <div class="col-span-4">
+            <div class="lg:col-span-4 col-span-2">
                 <x-ui::swiper class="w-full" swiper-wrapper-class="items-center"
                     options="{
-                    slidesPerView: 5,
+                    slidesPerView: 3,
                     breakpoints: {
                         800: { slidesPerView: 6, spaceBetween: 45, loop: true, autoplay: true }
                     }
@@ -206,7 +214,7 @@
                         slidesPerView: 4
                     }
                 }}"
-                class="animate-delay-300 max-lg:h-[45rem]">
+                class="animate-delay-300">
                 @foreach ($posts as $post)
                     <x-ui::swiper.item>
                         <x-post.card :post="$post" />
@@ -217,7 +225,6 @@
     </x-ui::section>
 
     <x-contato.card />
-
 
 
 </div>
