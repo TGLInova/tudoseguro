@@ -36,7 +36,12 @@ class PostResource extends Resource
                     ->required()
                     ->maxLength(255),
 
-                Forms\Components\Select::make('usuario_id')->relationship('usuario', 'nome')->label('Autor')->visible(fn () => Filament::auth()->user()->isAdmin()),
+                Forms\Components\Select::make('usuario_id')
+                    ->searchable()
+                    ->preload()
+                    ->relationship('usuario', 'nome')
+                    ->label('Autor')
+                    ->visible(fn() => Filament::auth()->user()->isAdmin()),
 
                 Forms\Components\DateTimePicker::make('data_publicacao')->label('Data de Publicação'),
                 Forms\Components\Textarea::make('descricao')->label('Descrição')->columnSpanFull()->maxLength(255),

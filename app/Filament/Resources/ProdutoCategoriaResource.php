@@ -20,7 +20,7 @@ class ProdutoCategoriaResource extends Resource
 {
     protected static ?string $model = ProdutoCategoria::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     protected static ?string $navigationGroup = 'Produtos';
 
@@ -38,7 +38,7 @@ class ProdutoCategoriaResource extends Resource
                 Forms\Components\TextInput::make('nome')->required(),
                 IconPicker::make('icone')->searchable(),
                 Forms\Components\Textarea::make('descricao')->label('Descrição')->columnSpanFull(),
-                Forms\Components\Toggle::make('exibir_menu')->label('Exibir no Menu?')->required(),
+                Forms\Components\ToggleButtons::make('exibir_menu')->label('Exibir no Menu?')->required()->boolean()->grouped(),
             ]);
     }
 
@@ -50,9 +50,7 @@ class ProdutoCategoriaResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('descricao')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('exibir_menu')
-                    ->boolean(),
-                IconColumn::make('icone'),
+                Tables\Columns\ToggleColumn::make('exibir_menu')->label('Exibir no menu?'),
             ])
             ->filters([
                 //

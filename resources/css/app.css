@@ -56,7 +56,7 @@
 
             @apply max-lg:p-6 max-lg:gap-8 max-lg:pt-20 max-lg:shadow-lg;
 
-            @apply max-lg:bg-primary-400/80 max-lg:text-white max-lg:backdrop-blur-xs;
+            @apply max-lg:bg-primary max-lg:text-white max-lg:backdrop-blur-xs max-lg:z-10;
         }
     }
 
@@ -84,17 +84,6 @@
     }
 }
 
-/* @utility ui-navbar-links {
-    .ui-navbar & {
-        @apply lg:gap-6 flex;
-
-        @apply max-lg:flex max-lg:flex-col max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:h-full max-lg:w-3/4 max-lg:duration-500;
-
-        @apply max-lg:p-6 max-lg:gap-8 max-lg:pt-20 max-lg:shadow-lg;
-
-        @apply max-lg:bg-primary-400/80 max-lg:text-white max-lg:backdrop-blur-xs;
-    }
-} */
 
 
 @layer utilities {
