@@ -59,7 +59,7 @@ class PostResource extends Resource
                     ->dateTime()
                     ->label('Data da Publicação')
                     ->sortable(),
-                TextColumn::make('postCategoria.nome')->badge()->label('Categoria')->placeholder('Não informada'),
+                TextColumn::make('usuario.nome')->label('Autor')->placeholder('Não informado'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -69,7 +69,7 @@ class PostResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
-                ToggleColumn::make('destaque')
+                // ToggleColumn::make('destaque')
             ])
             ->filters([
                 //
