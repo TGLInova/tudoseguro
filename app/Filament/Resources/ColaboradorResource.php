@@ -6,15 +6,13 @@ use App\Filament\Resources\ColaboradorResource\Pages;
 use App\Filament\Resources\ColaboradorResource\RelationManagers;
 use App\Models\Colaborador;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components as Fc;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use SebastianBergmann\CodeUnit\FileUnit;
+use Illuminate\Support\Facades\Hash;
 
 class ColaboradorResource extends Resource
 {
@@ -31,17 +29,35 @@ class ColaboradorResource extends Resource
         return $form
             ->columns(3)
             ->schema([
-                Forms\Components\Group::make([
-                    FileUpload::make('caminho')->directory('midias/colaboradores')->image()->imageEditor()->imageCropAspectRatio('3:4')
+                Fc\Group::make([
+                    Fc\FileUpload::make('caminho')->directory('midias/colaboradores')->image()->imageEditor()->imageCropAspectRatio('3:4')->required()
                 ])->relationship('imagem')->columnSpanFull()->label('Imagem'),
 
                 Forms\Components\TextInput::make('nome')
                     ->required()
+                    ->live(onBlur: true)
                     ->maxLength(255),
                 Forms\Components\TextInput::make('sobrenome')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('cargo')
                     ->maxLength(255),
+
+                Fc\Fieldset::make('Dados de Login')->relationship('usuario')->schema([
+                    Fc\TextInput::make('nome'),
+                    Fc\TextInput::make('email')->label('E-mail')->unique(ignoreRecord: true)->prefixIcon('heroicon-o-envelope'),
+                    Fc\TextInput::make('password')
+                        ->password()
+                        ->revealable()
+                        ->autocomplete('new-password')
+                        ->dehydrateStateUsing(fn(string $state): string => Hash::make($state))
+                        ->dehydrated(fn(?string $state): bool => filled($state))
+                        ->label('Senha')
+                        ->required(fn(string $operation): bool => $operation === 'create'),
+
+
+                    Fc\TextInput::make('password_confirmation')->revealable()->password()->label('Confirmação de Senha'),
+                ])
+
             ]);
     }
 
