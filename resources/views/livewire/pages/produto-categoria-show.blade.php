@@ -7,7 +7,7 @@
             </x-ui::container>
         </x-ui::section>
     </x-ui::hero>
-    <x-produto.grid :$produtos titulo="Proteção financeira para você e sua família!" />
+    <x-produto.grid :$produtos :titulo="$titulo" />
 
     <x-contato.big-card variant="neutral" />
 </div>

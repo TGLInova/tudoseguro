@@ -12,7 +12,7 @@ class Section extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public bool $showMore = true)
+    public function __construct(public bool $verMais = true, public ?string $titulo = null)
     {
         //
     }

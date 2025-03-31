@@ -16,5 +16,5 @@
         </x-ui::container>
     </x-ui::section>
 
-    <x-colaborador.section :show-more="false" />
+    <x-colaborador.section :show-more="false" titulo="Gostou de algum artigo? Entre em contato!" />
 </div>

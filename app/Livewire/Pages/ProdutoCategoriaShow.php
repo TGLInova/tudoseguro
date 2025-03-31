@@ -24,7 +24,13 @@ class ProdutoCategoriaShow extends BasePageComponent
     {
         $produtos = $this->produtoCategoria->produtos()->web()->get();
 
-        return view('livewire.pages.produto-categoria-show', compact('produtos'))->layoutData([
+        $titulo = match ($this->produtoCategoria->getKey()) {
+            1 => 'Proteção financeira para você e sua família!',
+            2 => 'Proteja a sua empresa e cresça com segurança!',
+            default => 'Conheça os nossos produtos!'
+        };
+
+        return view('livewire.pages.produto-categoria-show', compact('produtos', 'titulo'))->layoutData([
             'title'       => $this->produtoCategoria->titulo,
             'description' => $this->produtoCategoria->descricao,
             'image' => asset('static/img/banner-home.webp'),

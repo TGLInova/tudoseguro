@@ -189,7 +189,9 @@ return [
 
         'h4' => [
             'base'   => 'text-xl',
-            'variants' => []
+            'variants' => [
+                'normal' => 'font-bold'
+            ]
         ],
 
         'h5' => [
