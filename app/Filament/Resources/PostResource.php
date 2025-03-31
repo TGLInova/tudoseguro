@@ -25,7 +25,7 @@ class PostResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Publicações';
 
-    protected static ?string $modelLabel = 'Colaborador';
+    protected static ?string $modelLabel = 'Publicação';
 
     public static function form(Form $form): Form
     {
