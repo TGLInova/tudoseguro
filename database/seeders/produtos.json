@@ -3,14 +3,14 @@
         "id": 1,
         "nome": "Seguro de Vida",
         "descricao": "Proteção essencial para sua equipe, garantindo segurança e tranquilidade financeira.",
-        "icone" : "icon-seguro-vida",
-        "imagem" : "https://www.multisegseguros.com.br/wp-content/themes/multiseg/img/pages/riscos-diversos.jpg"
+        "icone" : "icon-seguro-vida"
     },
     {
         "id": 2,
         "nome": "RC Profissional",
         "descricao": "Segurança para exercer sua profissão com tranquilidade e segurança.",
-        "icone" : "icon-justica"
+        "icone" : "icon-justica",
+        "imagem" : "produtos/banner-home.webp"
     },
     {
         "id" : 3,

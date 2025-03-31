@@ -101,6 +101,7 @@ class ProdutoResource extends Resource
                 TextColumn::make('nome')->searchable(),
                 IconColumn::make('icone'),
                 ToggleColumn::make('ativo'),
+                ToggleColumn::make('destaque'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

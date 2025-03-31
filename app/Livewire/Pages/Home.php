@@ -16,7 +16,7 @@ class Home extends BasePageComponent
     {
         $produtos = Produto::query()->web()->take(10)->cursor();
 
-
+        $produtosDestaques = Produto::query()->web()->where('destaque', true)->cursor();
 
         $testemunhos = Testemunho::query()->web()->cursor();
 
@@ -26,6 +26,7 @@ class Home extends BasePageComponent
 
         return view('livewire.pages.home', [
             'produtos'      => $produtos,
+            'produtosDestaques' => $produtosDestaques,
             'posts'         => $posts,
             'testemunhos'   => $testemunhos,
             'parceiros'     => $parceiros

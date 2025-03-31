@@ -3,7 +3,7 @@
     <x-ui::container class="h-full flex items-center">
         <x-bless-ui::wrapper {{ $attributes }} tag="header" :tag-self-close="false" component="navbar">
             <a x-on:click="mobileOpen = !mobileOpen" class="text-current h-9 w-9 block absolute right-5 top-5 lg:hidden" >
-                <img src="{{ asset('static/img/logo.webp') }}">
+                <x-icon name="heroicon-o-bars-3" />
             </a>
             <a class="w-32 block" href="{{ route('home') }}" wire:navigate>
                 <img src="{{ asset('static/img/logo.webp') }}">

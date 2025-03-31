@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('descricao', 500)->nullable();
             $table->json('metadados')->nullable();
             $table->integer('ordem')->nullable();
+            $table->boolean('destaque')->default(0);
             $table->timestamps();
         });
     }

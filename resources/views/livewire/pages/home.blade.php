@@ -1,21 +1,25 @@
 <div>
-    <x-ui::hero
-        :image="asset('/static/img/banner-home.webp')"
-        class="max-lg:bg-[position:70%_bottom]"
-        container-class="flex flex-col items-center relative"
-        :variant="['large', 'metalic']">
-        <x-icon name="icon-seta-baixo-circulo" class="h-12 w-12 absolute bottom-0 translate-y-1/2 lg:hidden" />
-        <x-ui::container class="flex items-center grow">
-            <header class="space-y-6 text-white lg:col-span-3 lg:w-1/3" x-bind:class="{ '*:animate-fade-up': enable }">
-                <x-ui::h1 class="animate-duration-500">
-                    Proteção para a carreira dos profissionais da saúde.
-                </x-ui::h1>
-                <x-ui::button href="#formulario" class="animate-duration-700" :variant="['primary', 'base']">
-                    Entrar em contato
-                </x-ui::button>
-            </header>
-        </x-ui::container>
-    </x-ui::hero>
+    <x-ui::swiper options="{ slidesPerView: 1 }">
+        @foreach ($produtosDestaques as $item)
+            <x-ui::swiper.item>
+                <x-ui::hero :image="$item->imagem?->url ?? asset('/static/img/banner-home.webp')" class="max-lg:bg-[position:70%_bottom]"
+                    container-class="flex flex-col items-center relative" :variant="['large', 'metalic']">
+                    <x-ui::container class="flex items-center grow">
+                        <header class="space-y-6 text-white lg:col-span-3 lg:w-1/3"
+                            x-bind:class="{ '*:animate-fade-up': enable }">
+                            <h2>{{ $item->nome }}</h2>
+                            <div class="animate-duration-500 text-3xl">
+                                {{ $item->descricao }}
+                            </div>
+                            <x-ui::button :href="$item->url" class="animate-duration-700" :variant="['primary', 'base']">
+                                Conheça mais
+                            </x-ui::button>
+                        </header>
+                    </x-ui::container>
+                </x-ui::hero>
+            </x-ui::swiper.item>
+        @endforeach
+    </x-ui::swiper>
 
     <x-sections.home.about />
 

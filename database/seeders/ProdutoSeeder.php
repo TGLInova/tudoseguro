@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Midia;
 use App\Models\Produto;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -30,7 +31,8 @@ class ProdutoSeeder extends Seeder
 
             if ($imagem) {
 
-                $caminho = 'produtos/' . $produto->id . '_' . basename($imagem);
+                $caminho = Str::isUrl($imagem) ? 'produtos/' . $produto->id . '_' . basename($imagem) : $imagem;
+
 
                 if (! Storage::disk('public')->exists($caminho)) {
                     Storage::disk('public')->put($caminho, file_get_contents($imagem));
