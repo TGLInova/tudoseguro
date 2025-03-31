@@ -33,7 +33,10 @@ class ProdutoCategoriaSeeder extends Seeder
             $model->produtos()->sync((array) $map_produtos[$id] ?? []);
 
             $model->imagem()->firstOrNew([])->fill([
-                'caminho' => 'categorias/produtos.webp'
+                'caminho' => match ($id) {
+                    1 => 'categorias/para-sua-familia.webp',
+                    2 => 'categorias/para-sua-empresa.php',
+                }
             ])->save();
         }
     }
