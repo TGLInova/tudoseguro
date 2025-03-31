@@ -6,7 +6,7 @@
         </x-ui::container>
     </x-ui::hero>
 
-    <x-colaborador.section :$colaboradores :show-more="false" />
+    <x-colaborador.section :$colaboradores :ver-mais="false" />
 
     <x-contato.card />
 </div>
