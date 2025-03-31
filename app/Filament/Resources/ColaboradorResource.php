@@ -43,8 +43,8 @@ class ColaboradorResource extends Resource
                     ->maxLength(255),
 
                 Fc\Fieldset::make('Dados de Login')->relationship('usuario')->schema([
-                    Fc\TextInput::make('nome'),
-                    Fc\TextInput::make('email')->label('E-mail')->unique(ignoreRecord: true)->prefixIcon('heroicon-o-envelope'),
+                    Fc\TextInput::make('nome')->required(),
+                    Fc\TextInput::make('email')->required()->label('E-mail')->unique(ignoreRecord: true)->prefixIcon('heroicon-o-envelope'),
                     Fc\TextInput::make('password')
                         ->password()
                         ->revealable()
