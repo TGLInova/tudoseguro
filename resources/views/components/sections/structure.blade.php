@@ -16,7 +16,8 @@
                 </div>
             </div>
             <div>
-                <x-ui::swiper :pagination="true"
+                <x-ui::swiper
+                    :pagination="true"
                     options="{
                         slidesPerView: 1,
                         spaceBetween: 24,

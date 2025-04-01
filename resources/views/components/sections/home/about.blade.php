@@ -9,7 +9,7 @@ $items = [
 <x-ui::section>
     <x-ui::container class="text-center space-y-8">
         <x-ui::h2 class="lg:max-w-3xl lg:mx-auto">
-            Somos a TudoSeguro, corretora referência em <wbr>proteção e planejamento financeiro.
+            Somos a <strong>Tudo Seguro</strong>, corretora referência em <wbr>proteção e planejamento financeiro.
         </x-ui::h2>
         <p class="font-light">Uma empresa com mais de 24 anos, referência nacional em seguros.</p>
 

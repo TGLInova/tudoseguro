@@ -9,6 +9,7 @@
             </x-ui::h2>
             <div class="lg:col-span-4 w-full">
                 <x-ui::swiper
+                    :navigation="true"
                     options="{ slidesPerView: 2, spaceBetween: 5, autoplay: true, preventClicks: false, breakpoints: { 800: { slidesPerView: 3.3, spaceBetween: 20 } }, }">
                     @foreach ($produtos as $produto)
                         <x-ui::swiper.item wire:key="produto-swiper-item-{{ $produto->id }}">
@@ -19,7 +20,7 @@
                     @endforeach
                     <x-ui::swiper.item>
                         <x-ui::card :href="route('produtos')"
-                            class="flex-none flex flex-col w-full items-start justify-end space-y-4 h-72 duration-500 border-2 border-primary-200 hover:bg-white">
+                            class="flex-none flex flex-col w-full items-start justify-end space-y-4 h-64 duration-500 border-2 border-primary-200 hover:bg-white">
                             <x-icon name="icon-seguranca"
                                 class="lg:w-10 lg:h-10 h-8 w-8 flex-none text-primary-200" />
                             <div class="text-2xl flex items-center">

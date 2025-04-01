@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import 'swiper/css';
-import 'swiper/css/navigation'
+// import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Alpine, Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
@@ -9,8 +9,9 @@ Alpine.data('swiper', function (options = {}) {
 
     const el = this.$el;
 
-    el.classList.add('swiper', 'swiper-container')
+    el.classList.add('swiper')
 
+    const elContainer = el.closest('.swiper-container');
 
     const swiper = new Swiper(el, {
         modules: [Navigation, Pagination, Autoplay],
@@ -23,18 +24,16 @@ Alpine.data('swiper', function (options = {}) {
 
 
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: elContainer.querySelector(".swiper-button-next"),
+            // prevEl: elContainer.querySelector(".swiper-button-prev"),
         },
 
         pagination: {
-            el: el.querySelector('.swiper-pagination'),
+            el: elContainer.querySelector('.swiper-pagination'),
             clickable: true,
             type: 'custom',
             renderCustom: (swiper, current, total) => `<div class="swiper-pagination-container">${current} de ${total}</div>`
         },
-
-
 
         slidesPerView: 6,
         spaceBetween: 30,
