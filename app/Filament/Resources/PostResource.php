@@ -45,7 +45,7 @@ class PostResource extends Resource
                     ->maxLength(255),
 
                 Forms\Components\Select::make('usuario_id')
-                    ->relationship('usuario', 'nome')
+                    ->relationship('usuario', 'nome', fn ($query) => $query->oldest('nome'))
                     ->searchable()
                     ->preload()
                     ->allowHtml()
