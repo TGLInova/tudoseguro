@@ -2,27 +2,39 @@
 
 namespace App\Providers\Filament;
 
-use Filament\Http\Middleware\Authenticate;
-use Filament\Http\Middleware\DisableBladeIconComponents;
-use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
-use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
-use Filament\Support\Enums\MaxWidth;
 use Filament\Widgets;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Filament\Tables\Table;
+use Filament\PanelProvider;
+use Filament\Infolists\Infolist;
+use Filament\Support\Colors\Color;
+use Illuminate\Support\HtmlString;
+use Filament\Support\Enums\MaxWidth;
+use Illuminate\Support\Facades\Blade;
+use Filament\Http\Middleware\Authenticate;
+use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
-use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
-use Illuminate\Session\Middleware\StartSession;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\HtmlString;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Http\Middleware\DisableBladeIconComponents;
+use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 
 class AdminPanelProvider extends PanelProvider
 {
+
+    public function boot()
+    {
+        Table::$defaultDateDisplayFormat = 'd/m/Y';
+        Table::$defaultDateTimeDisplayFormat = 'd/m/Y H:i';
+
+        Infolist::$defaultDateDisplayFormat = 'd/m/Y';
+        Infolist::$defaultDateTimeDisplayFormat = 'd/m/Y H:i';
+    }
+
     public function panel(Panel $panel): Panel
     {
         return $panel

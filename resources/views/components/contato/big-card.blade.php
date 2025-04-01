@@ -8,7 +8,7 @@
                 </x-ui::h2>
                 @livewire('components.formulario-contato-completo', ['dark' => $variant === 'primary-400'])
             </div>
-            <div class="space-y-5">
+            <div class="space-y-3">
                 <x-ui::h2 class="text-center mb-6">
                     Entre em contato
                 </x-ui::h2>

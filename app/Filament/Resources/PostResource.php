@@ -2,22 +2,23 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Forms;
+use App\Models\Post;
+use Filament\Tables;
+use App\Models\Usuario;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
+use Filament\Facades\Filament;
+use Filament\Resources\Resource;
+use Filament\Support\Colors\Color;
+use Filament\Tables\Columns as Tc;
+use Illuminate\Support\HtmlString;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
+use Filament\Tables\Columns\ToggleColumn;
 use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
-use App\Models\Post;
-use App\Models\Usuario;
-use Filament\Facades\Filament;
-use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Columns as Tc;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ToggleColumn;
-use Filament\Tables\Table;
-use Illuminate\Support\HtmlString;
 
 class PostResource extends Resource
 {
@@ -73,8 +74,27 @@ class PostResource extends Resource
                 Tables\Columns\TextColumn::make('data_publicacao')
                     ->dateTime()
                     ->label('Data da Publicação')
+                    ->color(function ($state) {
+
+                        if ($state->gt(now())) {
+                            return 'warning';
+                        }
+
+                        return 'success';
+                    })
+                    ->icon(function ($state) {
+
+                        if ($state->gt(now())) {
+                            return 'heroicon-o-clock';
+                        }
+
+                        return 'heroicon-o-check-circle';
+                    })
                     ->sortable(),
-                TextColumn::make('usuario.nome')->label('Autor')->placeholder('Não informado'),
+                TextColumn::make('usuario')
+                    ->label('Autor')
+                    ->formatStateUsing(fn ($state) => $state?->nome)
+                    ->placeholder('Não informado'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
