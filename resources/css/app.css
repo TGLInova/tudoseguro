@@ -62,12 +62,16 @@
 
     .ui-hero {
 
-        > .ui-hero-bg{
+        > .ui-hero-bg {
             @apply h-full w-full absolute inset-0;
         }
 
         &.metalic > .ui-hero-bg {
             @apply bg-gradient-to-r from-primary-600 to-transparent;
+        }
+
+        &.primary > .ui-hero-bg {
+            @apply text-white bg-primary ;
         }
 
 

@@ -1,5 +1,7 @@
 <div>
-    <x-ui::hero :image="asset('/static/img/banner-sobre-2.webp')" class="lg:bg-[center_5%] !bg-top max-lg:bg-[size:auto_136%]" container-class="flex flex-col" :variant="['normal', 'metalic']">
+    <x-ui::hero :image="asset('/static/img/banner-sobre-2.webp')"
+        image-class="max-lg:bg-[center_5%] bg-[size:115%_auto] bg-[0%_5%] max-lg:bg-[size:auto_136%]"
+        container-class="flex flex-col" :variant="['normal', 'metalic']">
         <x-ui::container class="flex items-center grow">
             <header class="space-y-6 text-white lg:w-1/4" x-bind:class="{ '*:animate-fade-up': enable }">
                 <x-ui::h1 class="animate-duration-500">

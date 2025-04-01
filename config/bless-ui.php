@@ -23,7 +23,7 @@ return [
 
         'button' => [
             'base'   => [
-                'duration-500 inline-flex outline-hidden items-center justify-center active:-trangray-y-px disabled:opacity-40',
+                'duration-500 inline-flex outline-hidden items-center justify-center active:-translate-y-px disabled:opacity-40',
                 'px-4 py-2',
                 'rounded-lg'
             ],
@@ -223,8 +223,7 @@ return [
                 'large'  => ['lg:h-[38rem] h-[40rem]'],
 
                 'metalic' => null,
-
-                'primary' => 'text-white bg-primary bg-blend-multiply'
+                'primary' => null,
             ]
         ]
 
