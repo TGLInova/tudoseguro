@@ -53,4 +53,18 @@ class Post extends Model
 
         return $query->whereNull('data_publicacao')->orWhere('data_publicacao', '>', now());
     }
+
+    public function scopeAgendados($query)
+    {
+        return $query->where('data_publicacao', '>', now());
+    }
+
+    public function scopeAcessiveis($query, Usuario $usuario)
+    {
+        if ($usuario->isAdmin()) {
+            return $query;
+        }
+
+        return $query->where('usuario_id', $usuario->getKey());
+    }
 }
