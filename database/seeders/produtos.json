@@ -16,7 +16,16 @@
         "id" : 3,
         "nome" : "Previdência Privada",
         "icone" : "icon-cofrinho",
-        "descricao" : "Garantindo um futuro tranquilo e seguro para a sua equipe."
+        "descricao" : "Garantindo um futuro tranquilo e seguro para a sua equipe.",
+        "imagem": "https://tudosegurocorretora.com.br/wp-content/uploads/2018/04/previdencia-privada.jpg",
+        "metadados" : {
+            "texto" : "A construção do seu futuro depende acima de tudo das atitudes que você tem hoje. O amanhã não é obra do acaso e cada pessoa deve ser protagonista na conquista dos seus sonhos.Previdência privada é uma das melhores opções para quem sonha alto, pensa no futuro e não abre mão do presente. Nós temos diversas soluções de previdência individual e infantil. Basta escolher a que mais atende as suas necessidades.",
+            "publico_alvo" : [],
+            "coberturas" : [],
+            "beneficios": {
+                "texto": "<ul><li>Sem custo na transferência do seu plano de outra instituição.</li><li>Diversificação de investimentos.</li><li>Coberturas adicionais para proteção familiar.</li><li>Poupança para o futuro.</li><li>Incentivo fiscal (no caso de PGBL).</li><li>Planejamento para sucessão familiar.</li><li>Diversidade de opções para recebimento de renda.</li><li>Sem cobrança de carregamento na entrada.</li></ul>"
+            }
+        }
     },
     {
         "id" : 4,
@@ -48,5 +57,54 @@
         "nome" : "Máquinas e Equipamentos",
         "descricao": "Proteção completa para suas máquinas e equipamentos contra danos e imprevistos.",
         "icone": "icon-capacete"
+    },
+    {
+        "id": 9,
+        "nome": "Seguro Viagem",
+        "icone" : "icon-viagem",
+        "descricao": "Proteção completa para sua viagem, com segurança e tranquilidade, sem imprevistos."
+    },
+    {
+        "id": 10,
+        "nome" : "Seguro Pet",
+        "descricao" : "Cuidado e proteção para seu pet, garantindo saúde e bem-estar sem preocupações.",
+        "icone" : "icon-pet"
+    },
+    {
+        "id" : 11,
+        "nome" : "Seguro Escolar",
+        "descricao": "Segurança e proteção para alunos e instituições, com amparo em imprevistos.",
+        "icone" : "icon-escolar"
+    },
+    {
+        "id" : 12,
+        "nome" : "Seguro Residencial",
+        "descricao": "Proteção completa para seu lar, garantindo segurança e tranquilidade sempre.",
+        "icone" : "icon-casa"
+    },
+    {
+        "id" : 13,
+        "nome" : "Seguro Bike",
+        "descricao": "Proteção total para sua bike contra roubos, furtos e danos, onde quer que vá.",
+        "icone" : "icon-bike"
+    },
+    {
+        "id" : 14,
+        "nome" : "Seguro Odonto",
+        "descricao": "Sorria com confiança! Proteção e cuidados odontológicos sem preocupações.",
+        "icone" : "icon-dente"
+    },
+
+    {
+        "id": 15,
+        "nome" :"Seguro de Renda",
+        "descricao": "Garanta sua estabilidade financeira com proteção de renda em qualquer situação.",
+        "icone" : "icon-seguro-renda"
+    },
+    {
+        "id" : 16,
+        "nome" : "Seguro Automovel",
+        "descricao": "Tranquilidade para você dirigir sem preocupações.",
+        "icone" : "icon-carro"
     }
 ]

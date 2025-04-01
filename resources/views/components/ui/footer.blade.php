@@ -24,9 +24,9 @@
 </x-ui::section>
 <section class="py-6">
     <x-ui::container class="flex items-center gap-6">
-        <div class="grid grid-cols-3 w-32 gap-3">
+        <div class="grid grid-cols-3 gap-4">
             @foreach(['facebook', 'instagram', 'linkedin'] as $item)
-                <x-icon :name="'icon-' . $item" />
+                <x-icon :name="'icon-' . $item" class="w-9" />
             @endforeach
         </div>
         <div>

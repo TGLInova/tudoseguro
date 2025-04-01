@@ -12,6 +12,7 @@
     </x-ui::hero>
 
     @if ($produto->metadados)
+
         <x-ui::section>
             <x-ui::container class="space-y-6">
                 <x-ui::h2 class='text-center font-semibold'>O que é?</x-ui::h2>
@@ -19,11 +20,12 @@
             </x-ui::container>
         </x-ui::section>
 
+        @if($items = $produto->metadados->get('public_alvo'))
         <x-ui::section>
             <x-ui::container class="space-y-6">
                 <x-ui::h2 class='text-center font-semibold'>Para quem é indicado:</x-ui::h2>
                 <div class="grid lg:grid-cols-3 gap-8">
-                    @foreach ($produto->metadados->get('publico_alvo') as $item)
+                    @foreach ($items as $item)
                         <x-ui::card>
                             <header class="flex gap-3 items-center mb-3">
                                 @if ($item['icone'])
@@ -37,6 +39,7 @@
                 </div>
             </x-ui::container>
         </x-ui::section>
+        @endif
 
         <section class="bg-gray-200">
             <x-ui::container class="space-y-6 grid lg:grid-cols-2 gap-16 items-center">
@@ -58,11 +61,12 @@
         </section>
 
 
+        @if($items = $produto->metadados->get('coberturas'))
         <x-ui::section>
             <x-ui::container class="space-y-6">
                 <x-ui::h2 class='text-center font-semibold'>Coberturas e Assistências de {{ $produto->nome }}</x-ui::h2>
                 <div class="grid lg:grid-cols-2 gap-16">
-                    @foreach ($produto->metadados->get('coberturas') as $item)
+                    @foreach ($items as $item)
                         <x-ui::card class="space-y-4">
                             @if ($item['icone'])
                                 <x-icon :name="$item['icone']" class="h-12 w-12 text-primary-400 flex-none" />
@@ -78,5 +82,6 @@
                 </div>
             </x-ui::container>
         </x-ui::section>
+        @endif
     @endif
 </div>
