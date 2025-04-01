@@ -37,10 +37,15 @@ class ColaboradorResource extends Resource
                     ->required()
                     ->live(onBlur: true)
                     ->maxLength(255),
-                Forms\Components\TextInput::make('sobrenome')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('cargo')
-                    ->maxLength(255),
+                Forms\Components\TextInput::make('sobrenome')->required()->maxLength(255),
+                Forms\Components\TextInput::make('cargo')->required()->maxLength(255),
+
+                Fc\Fieldset::make('Redes Sociais')->columns(4)->schema([
+                    Fc\TextInput::make('instagram')->prefixIcon('icon-instagram')->url(),
+                    Fc\TextInput::make('linkedin')->prefixIcon('icon-linkedin')->url(),
+                    Fc\TextInput::make('facebook')->prefixIcon('icon-facebook')->url(),
+                    Fc\TextInput::make('whatsapp')->prefixIcon('icon-whatsapp')->mask('(99) 99999-9999')
+                ]),
 
                 Fc\Fieldset::make('Dados de Login')->relationship('usuario')->schema([
                     Fc\TextInput::make('nome')->required(),

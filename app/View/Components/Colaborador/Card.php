@@ -22,6 +22,14 @@ class Card extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.colaborador.card');
+        $redesSociais = [
+            'icon-whatsapp' => $this->colaborador->url_whatsapp,
+            'icon-instagram' => $this->colaborador->instagram,
+            'icon-linkedin' => $this->colaborador->linkedin
+        ];
+
+        return view('components.colaborador.card', [
+            'redesSociais' => $redesSociais
+        ]);
     }
 }

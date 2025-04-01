@@ -9,8 +9,8 @@
     </div>
 
     <div class="flex gap-5 items-center justify-center">
-        @foreach(['icon-whatsapp', 'icon-instagram', 'icon-linkedin'] as $icon)
-            <a class="bg-primary text-white rounded-lg p-2 h-12 w-12">
+        @foreach($redesSociais as $icon => $url)
+            <a @class(['bg-primary text-white rounded-lg p-2 h-12 w-12', 'grayscale-100 pointer-events-none' => blank($url) ]) target="_blank" href="{{ $url }}" rel="noopener nofollow">
                 <x-icon :name="$icon" class="h-full w-full" />
             </a>
         @endforeach

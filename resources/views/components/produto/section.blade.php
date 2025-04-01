@@ -1,4 +1,4 @@
-<x-ui::section variant="neutral" x-intersect.full:enter="enable = true" x-intersect.full:leave="enable = false"
+<x-ui::section variant="neutral" x-intersect.half:enter="enable = true" x-intersect.half:leave="enable = false"
     x-data="{ enable: false }">
 
     <x-ui::container>

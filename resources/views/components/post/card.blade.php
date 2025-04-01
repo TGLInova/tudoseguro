@@ -6,10 +6,10 @@
             <div class="text-[0.68rem] text-primary font-light">{{ $post->usuario->colaborador?->cargo ?? 'Redator' }}</div>
         </div>
     </header>
-    <figure class="w-full h-32 bg-primary rounded-xl overflow-hidden">
+    <div class="w-full h-32 bg-primary rounded-xl overflow-hidden relative">
         <img width="379" height="187" alt="{{ $post->titulo }}" src="{{ $post->imagem?->url }}" loading="lazy"
             class="h-full w-full object-cover shadow-sm grayscale-100 mix-blend-overlay">
-    </figure>
+    </div>
     <h4 class="text-xl leading-snug grow">{{ $post->titulo }}</h4>
     <x-ui::button variant="primary" :href="$post->url">
         Leia mais

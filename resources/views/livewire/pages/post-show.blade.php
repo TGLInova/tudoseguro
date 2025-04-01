@@ -37,32 +37,39 @@
     </x-ui::container>
 
     @if($post->usuario)
-    <x-ui::section>
-        <x-ui::container>
-            <div class="bg-gray-200 p-12 rounded-md shadow-sm">
-                <x-ui::h3 class="text-center mb-8">
-                    <div class="font-semibold">Você gostou do conteúdo?</div>
-                    <div>Você pode entrar em contato diretamente com {{ $post->usuario->nome }}!</div>
-                </x-ui::h3>
-                <div class="flex gap-12 justify-center items-center">
-                    <div class="flex gap-4 items-center">
-                        <img width="50" height="50" class="h-12 w-12 rounded object-center object-cover flex-none" src="{{ $post->usuario->getFilamentAvatarUrl()}}">
-                        <div>
-                            <h4 class="text-2xl font-semibold">{{ $post->usuario->nome }}</h4>
-                            <p class="font-light text-xl">{{ $post->usuario->colaborador?->cargo ?? 'Redator' }}</p>
+        <x-ui::section>
+            <x-ui::container>
+                <div class="bg-gray-200 p-12 rounded-md shadow-sm">
+                    <x-ui::h3 class="text-center mb-8">
+                        <div class="font-semibold">Você gostou do conteúdo?</div>
+                        <div>Você pode entrar em contato diretamente com {{ $post->usuario->nome }}!</div>
+                    </x-ui::h3>
+                    <div class="flex gap-8 justify-center items-center max-lg:flex-col">
+                        <div class="flex gap-4 items-center">
+                            <img width="50" height="50" class="h-12 w-12 rounded object-center object-cover flex-none" src="{{ $post->usuario->getFilamentAvatarUrl()}}">
+                            <div>
+                                <h4 class="text-2xl font-semibold">{{ $post->usuario->nome }}</h4>
+                                <p class="font-light text-xl">{{ $post->usuario->colaborador?->cargo ?? 'Redator' }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-4 content-center">
-                        @foreach (['icon-whatsapp', 'icon-instagram', 'icon-linkedin'] as $icon)
-                            <a class="bg-primary text-white rounded-lg p-2 h-12 w-12">
-                                <x-icon :name="$icon" class="h-full w-full" />
-                            </a>
-                        @endforeach
+                        <nav class="grid grid-cols-3 lg:gap-4 gap-8">
+                            @foreach (['icon-whatsapp' => 'whatsapp', 'icon-instagram' => 'instagram', 'icon-linkedin' => 'linkedin'] as $icon => $field)
+                                @php
+                                $redeSocial = $post->usuario?->colaborador?->getAttribute($field);
+                                @endphp
 
+                                @unless($redeSocial)
+                                    @continue
+                                @endunless
+
+                                <a class="bg-primary text-white rounded-lg p-2 h-12 w-12" href="{{ $redeSocial }}">
+                                    <x-icon :name="$icon" class="h-full w-full" />
+                                </a>
+                            @endforeach
+                        </nav>
                     </div>
                 </div>
-            </div>
-        </x-ui::container>
-    </x-ui::section>
+            </x-ui::container>
+        </x-ui::section>
     @endif
 </article>

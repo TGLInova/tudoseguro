@@ -7,12 +7,12 @@
             <div class="ui-footer-item lg:col-span-3 text-lg max-lg:flex-col">
                 <div class="flex gap-2 items-center">
                     <x-icon name="icon-telefone" class="h-8 w-8 flex-none" />
-                    <span>(69) 3443-1175 | (69) 98455-4514</span>
+                    <span>{{ $siteSettings->telefoneComMascara() }} | {{ $siteSettings->celularComMascara() }}</span>
                 </div>
 
                 <div class="flex gap-2 items-center">
                     <x-icon name="heroicon-o-map-pin" class="h-8 w-8 flex-none" />
-                    <span>Av. Dois de Junho, 2505 - Centro - RO - CEP: 76963-787</span>
+                    <span>{{ $siteSettings->endereco }}</span>
                 </div>
             </div>
         </div>
@@ -26,7 +26,9 @@
     <x-ui::container class="flex items-center gap-6">
         <div class="grid grid-cols-3 gap-4">
             @foreach(['facebook', 'instagram', 'linkedin'] as $item)
-                <x-icon :name="'icon-' . $item" class="w-9" />
+                <a href="{{ $siteSettings->$item ?? '#' }}">
+                    <x-icon :name="'icon-' . $item" class="w-9" />
+                </a>
             @endforeach
         </div>
         <div>

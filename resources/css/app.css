@@ -47,9 +47,6 @@
 }
 
 
-/* @utility ui-border-animated-line {
-    @apply z-10 bg-primary-200 duration-(--border-animated-delay) h-[2px] w-[2px] rounded-lg shadow-sm shadow-primary-400;
-} */
 
 @layer components {
     .ui-navbar {
@@ -107,6 +104,8 @@
     > .swiper-pagination-container{
         @apply bg-neutral-200 px-4 py-1.5 rounded font-semibold text-black;
     }
+
+
 }
 
 
@@ -118,5 +117,4 @@
 
     --swiper-pagination-bottom: -20px;
     --swiper-navigation-sides-offset: -45px;
-
 }

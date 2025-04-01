@@ -1,4 +1,5 @@
 <div>
+    <h1 class="sr-only">Tudo Seguro - Corretora de Seguros</h1>
     <x-ui::swiper options="{ slidesPerView: 1 }">
         @foreach ($produtosDestaques as $item)
             <x-ui::swiper.item>
