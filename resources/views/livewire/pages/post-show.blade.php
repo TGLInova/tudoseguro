@@ -42,13 +42,13 @@
             <div class="bg-gray-200 p-12 rounded-md shadow-sm">
                 <x-ui::h3 class="text-center mb-8">
                     <div class="font-semibold">Você gostou do conteúdo?</div>
-                    <div>Você pode encontrar em contato diretamente com {{ $post->usuario->colaborador?->nome }}!</div>
+                    <div>Você pode entrar em contato diretamente com {{ $post->usuario->nome }}!</div>
                 </x-ui::h3>
                 <div class="flex gap-12 justify-center items-center">
                     <div class="flex gap-4 items-center">
                         <img width="50" height="50" class="h-12 w-12 rounded object-center object-cover flex-none" src="{{ $post->usuario->getFilamentAvatarUrl()}}">
                         <div>
-                            <h4 class="text-2xl font-semibold">{{ $post->usuario->colaborador?->nome ?? $post->usuario->nome }}</h4>
+                            <h4 class="text-2xl font-semibold">{{ $post->usuario->nome }}</h4>
                             <p class="font-light text-xl">{{ $post->usuario->colaborador?->cargo ?? 'Redator' }}</p>
                         </div>
                     </div>
