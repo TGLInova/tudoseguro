@@ -33,7 +33,7 @@ class Home extends BasePageComponent
         ])->layoutData([
             'title'       => 'Início',
             'description' => 'Soluções em seguros para proteger a sua empresa!',
-            'image'       => asset('static/img/banner-home.webp'),
+            'image'       => asset('static/img/banner-sobre.webp'),
         ]);
     }
 }

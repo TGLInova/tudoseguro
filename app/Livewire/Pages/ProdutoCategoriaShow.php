@@ -33,7 +33,7 @@ class ProdutoCategoriaShow extends BasePageComponent
         return view('livewire.pages.produto-categoria-show', compact('produtos', 'titulo'))->layoutData([
             'title'       => $this->produtoCategoria->titulo,
             'description' => $this->produtoCategoria->descricao,
-            'image' => asset('static/img/banner-home.webp'),
+            'image'       => $this->produtoCategoria->imagem?->url,
         ]);
     }
 }

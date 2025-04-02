@@ -8,8 +8,8 @@ class FaleConosco extends BasePageComponent
     {
         return view('livewire.pages.fale_conosco')->layoutData([
             'title'       => 'Fale Conosco',
-            'description' => 'Precisa de Ajuda? Fale com o nosso time de especialistas da Multiseg!',
-            'image'       => asset('static/img/banner-home.webp'),
+            'description' => 'Precisa de Ajuda? Fale com o nosso time de especialistas!',
+            'image'       => asset('static/img/fale_conosco.webp'),
         ]);
     }
 }
