@@ -1,6 +1,6 @@
 <article {{ $attributes->class('flex flex-col gap-4 h relative duration-200 bg-gray-200 p-5 rounded-xl shadow h-96') }}>
     <header class="flex gap-3 items-center">
-        <img src="{!! $post->usuario?->getFilamentAvatarUrl() !!}" class="h-9 w-9 rounded-full object-cover flex-none">
+        <img src="{!! $post->usuario?->getFilamentAvatarUrl() !!}" class="h-9 w-9 rounded-full object-cover flex-none" width="32" height="32" alt="{{ $post->usuario?->nome }}">
         <div class="leading-none">
             <div class="text-sm font-semibold">{{ $post->usuario?->nome ?? 'Autor' }}</div>
             <div class="text-[0.68rem] text-primary font-light">{{ $post->usuario->colaborador?->cargo ?? 'Redator' }}</div>

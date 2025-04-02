@@ -2,7 +2,10 @@
     <x-ui::container>
         <div class="grid lg:grid-cols-4 lg:gap-24 gap-8 text-sm font-light">
             <div>
-                <img src="{{ asset('static/img/logo-inverted.webp') }}" width="300" height="105"
+                <img src="{{ asset('static/img/logo-inverted.webp') }}"
+                    width="300"
+                    height="105"
+                    alt="Tudo Seguro"
                     class="lg:w-full w-48">
             </div>
             <div class="ui-footer-item lg:col-span-3 text-lg max-lg:flex-col">

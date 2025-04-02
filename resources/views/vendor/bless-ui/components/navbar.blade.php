@@ -6,7 +6,7 @@
                 <x-icon name="heroicon-o-bars-3" />
             </a>
             <a class="w-32 block" href="{{ route('home') }}" wire:navigate>
-                <img src="{{ asset('static/img/logo.webp') }}">
+                <img src="{{ asset('static/img/logo.webp') }}" alt="Tudo Seguro" lazy="eager" width="375" height="169">
             </a>
             <nav class="ui-navbar-links" x-bind:class="mobileOpen ?  [] : ['max-lg:invisible max-lg:-translate-x-full']">
                 @foreach($links as $text => $url)

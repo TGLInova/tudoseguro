@@ -37,6 +37,7 @@
             <div>
                 <img width="560" height="359" loading="eager"
                     class="animate-delay-700 w-full h-full object-cover rounded-xl shadow"
+                    alt="Equipe Tudo Seguro"
                     src="{{ asset('static/img/equipe.webp') }}" x-bind:class="{ 'animate-fade-right': enable }">
             </div>
         </x-ui::container>
@@ -48,7 +49,8 @@
             <div class="grid lg:grid-cols-5 gap-12 items-center">
                 <figure class="animate-delay-[300ms] w-full block lg:col-span-3"
                     x-bind:class="{ 'animate-fade': enable }">
-                    <img alt="Alexandre Faria" class='w-full object-center object-cover' width="552" height="353"
+                    <img alt="Equipe Tudo Seguro"
+                        class='w-full object-center object-cover' width="552" height="353"
                         src="{{ asset('static/img/equipe-2.webp') }}" loading="eager">
                 </figure>
                 <div class="lg:col-span-2 text-sm" x-bind:class="{ '*:animate-fade-up': enable }">

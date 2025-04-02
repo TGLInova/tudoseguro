@@ -143,7 +143,7 @@
                                 'lg:w-56 w-1/3 flex-none animate-delay-(--delay-value) object-contain',
                                 '-mr-5' => !$loop->last,
                             ])
-                            style="--delay-value: {{ $i * 300 }}ms">
+                            style="--delay-value: {{ $i * 300 }}ms" width="200" height="200" alt="Especialista Tudo Seguro">
                     @endforeach
                 </div>
 

@@ -28,7 +28,7 @@
                     @foreach (['https://images.pexels.com/photos/27920699/pexels-photo-27920699/free-photo-of-mesa-balcao-escritorio-plantar.jpeg?auto=compress&cs=tinysrgb&w=600', 'https://images.pexels.com/photos/17107738/pexels-photo-17107738/free-photo-of-leve-luz-light-cidade.jpeg?auto=compress&cs=tinysrgb&w=600'] as $src)
                         <x-ui::swiper.item>
                             <div class="rounded-xl h-80 bg-neutral-300 overflow-hidden">
-                                <img class="h-full w-full object-cover" src="{{ $src }}">
+                                <img alt="Tudo Seguro" width="600" height="600" class="h-full w-full object-cover" src="{{ $src }}">
                             </div>
                         </x-ui::swiper.item>
                     @endforeach
