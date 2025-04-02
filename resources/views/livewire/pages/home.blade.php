@@ -160,12 +160,8 @@
                     </x-ui::h2>
                     <p class="max-lg:text-center">Descontos em farmácias, clínicas e academias.</p>
                 </div>
-                <div class='space-y-6'>
-                    <x-ui::input variant="transparent" placeholder="Nome:" />
-                    <x-ui::input variant="transparent" placeholder="CPF:" />
-                    <x-ui::button variant="primary-400" class="w-full">
-                        Gerar meu cartão
-                    </x-ui::button>
+                <div>
+                    @livewire('components.formulario-cartao-beneficio')
                 </div>
             </div>
         </x-ui::container>

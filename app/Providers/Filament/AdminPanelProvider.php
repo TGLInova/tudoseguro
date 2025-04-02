@@ -43,6 +43,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->font('Poppins')
+            ->spa()
 
             ->maxContentWidth(MaxWidth::Full)
             ->colors([
