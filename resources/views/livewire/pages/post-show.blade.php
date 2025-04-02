@@ -14,6 +14,9 @@
                     <em class="max-lg:hidden">Escrito Por:</em>
                     <div class="flex gap-2 items-center">
                         <img src="{{ $post->usuario?->getFilamentAvatarUrl() }}"
+                            height="48"
+                            width="48"
+                            alt="{{ $post->usuario?->nome }}"
                             class="h-12 w-12 object-cover rounded-sm">
                         <div>
                             <div class="font-bold">
@@ -46,7 +49,7 @@
                     </x-ui::h3>
                     <div class="flex gap-8 justify-center items-center max-lg:flex-col">
                         <div class="flex gap-4 items-center">
-                            <img width="50" height="50" class="h-12 w-12 rounded object-center object-cover flex-none" src="{{ $post->usuario->getFilamentAvatarUrl()}}">
+                            <img width="50" height="50"  alt="{{ $post->usuario?->nome }}" loading="lazy" class="h-12 w-12 rounded object-center object-cover flex-none" src="{{ $post->usuario->getFilamentAvatarUrl()}}">
                             <div>
                                 <h4 class="text-2xl font-semibold">{{ $post->usuario->nome }}</h4>
                                 <p class="font-light text-xl">{{ $post->usuario->colaborador?->cargo ?? 'Redator' }}</p>

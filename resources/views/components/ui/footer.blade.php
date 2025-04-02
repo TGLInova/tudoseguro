@@ -6,6 +6,7 @@
                     width="300"
                     height="105"
                     alt="Tudo Seguro"
+                    loading="eager"
                     class="lg:w-full w-48">
             </div>
             <div class="ui-footer-item lg:col-span-3 text-lg max-lg:flex-col">
