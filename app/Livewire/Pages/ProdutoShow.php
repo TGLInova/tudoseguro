@@ -11,6 +11,11 @@ class ProdutoShow extends BasePageComponent
 
     public function render()
     {
-        return view('livewire.pages.produto-show')->layoutData([]);
+        return view('livewire.pages.produto-show')->layoutData([
+            'title' => $this->produto->nome,
+            'description' => $this->produto->descricao,
+            'image'      => $this->produto->imagem?->url,
+            'url'         => $this->produto->url_canonica,
+        ]);
     }
 }

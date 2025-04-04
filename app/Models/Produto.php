@@ -23,6 +23,11 @@ class Produto extends Model
         return Attribute::make(get: fn () => route('produto.show', ['produto' => $this->id, 'slug' => Str::slug($this->nome)], false))->shouldCache();
     }
 
+    public function urlCanonica(): Attribute
+    {
+        return Attribute::make(get: fn () => route('produto.show', ['produto' => $this->id, 'slug' => Str::slug($this->nome)]))->shouldCache();
+    }
+
     public function imagem(): MorphOne
     {
         return $this->morphOne(Midia::class, 'model');
