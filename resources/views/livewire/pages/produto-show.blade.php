@@ -15,7 +15,7 @@
 
         <x-ui::section>
             <x-ui::container class="space-y-6">
-                <x-ui::h2 class='text-center font-semibold'>O que é?</x-ui::h2>
+                <x-ui::h2 class='text-center font-semibold'>{{ $produto->id === 2 ? 'Você não precisa errar para ser processado!' : 'O que é?' }}</x-ui::h2>
                 <div class='text-center font-light'>{!! $produto->metadados->get('texto') !!}</div>
             </x-ui::container>
         </x-ui::section>
