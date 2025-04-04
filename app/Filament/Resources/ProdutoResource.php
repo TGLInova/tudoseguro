@@ -127,7 +127,7 @@ class ProdutoResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\ViewAction::make(),
+                Tables\Actions\Action::make('preview')->url(fn (Produto $record) => route('produto.show', ['produto' => $record]), true)->label('Visualizar')->icon('heroicon-o-eye')->color('white'),
                 Tables\Actions\EditAction::make(),
             ]);
     }
