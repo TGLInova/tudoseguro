@@ -36,7 +36,7 @@ class PostResource extends Resource
             ->columns(['lg' => 4])
             ->schema([
                 Forms\Components\Group::make([
-                    FileUpload::make('caminho')->directory('midias/posts'),
+                    FileUpload::make('caminho')->directory('midias/posts')->image()->imageEditor(),
                 ])->relationship('imagem')->columnSpanFull(),
 
                 Forms\Components\TextInput::make('titulo')

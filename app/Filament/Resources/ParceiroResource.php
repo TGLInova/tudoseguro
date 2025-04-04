@@ -28,7 +28,7 @@ class ParceiroResource extends Resource
         return $form
             ->schema([
                 Fc\Group::make([
-                    Fc\FileUpload::make('caminho')->disk('public')->directory('midias/parceiros')->imageEditor(),
+                    Fc\FileUpload::make('caminho')->disk('public')->directory('midias/parceiros')->image()->imageEditor(),
                 ])->relationship('imagem', static fn (?array $state) => filled($state['caminho'])),
                 Fc\TextInput::make('nome')
             ]);
