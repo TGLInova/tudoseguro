@@ -4,7 +4,7 @@
             <x-ui::container class="text-center space-y-5" variant="compact">
                 <x-ui::h1 class="mb-5">{{ $produto->nome }}</x-ui::h1>
                 <div>{{ $produto->descricao }}</div>
-                <x-ui::button :variant="['primary', 'large']">
+                <x-ui::button :variant="['primary', 'large']" href="#formulario">
                     Contratar Agora
                 </x-ui::button>
             </x-ui::container>
@@ -48,7 +48,7 @@
                         {{ data_get($produto->metadados, 'beneficios.titulo', "Benefícios do {$produto->nome}") }}
                     </x-ui::h2>
                     <div class="prose marker:text-gray-400 marker:text-sm">{!! data_get($produto->metadados, 'beneficios.texto') !!}</div>
-                    <x-ui::button variant="primary">
+                    <x-ui::button variant="primary" href="#formulario">
                         Contratar agora
                     </x-ui::button>
                 </div>
@@ -86,4 +86,6 @@
         </x-ui::section>
         @endif
     @endif
+
+    <x-contato.big-card variant="gray" id="formulario" />
 </div>

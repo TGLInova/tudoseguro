@@ -1,4 +1,4 @@
-<x-ui::section :variant="$variant" x-data="{ enable: false }" x-intersect.half:enter="enable = true"
+<x-ui::section {{ $attributes}} :variant="$variant" x-data="{ enable: false }" x-intersect.half:enter="enable = true"
     x-intersect.half:leave="enable = false">
     <x-ui::container>
         <div class="grid lg:grid-cols-2 gap-12 items-center">
