@@ -10,11 +10,13 @@ class CartaoDigital extends BasePageComponent
 
     public function render()
     {
-        $colaboradores = Colaborador::cursor();
+        $colaboradores = Colaborador::get();
 
         $image = asset('static/img/equipe-3.webp');
 
-        return view('livewire.pages.cartao-digital', compact('colaboradores', 'image'))->layoutData([
+        $index = $colaboradores->filter(fn ($x) => $x->getKey() == $this->colaborador?->getKey())->keys()->first();
+
+        return view('livewire.pages.cartao-digital', compact('colaboradores', 'image', 'index'))->layoutData([
             'title'       => 'Nossa Equipe',
             'image'       => $image,
             'description' => 'Conheça nosso time de especialistas prontos para ajudar você!'

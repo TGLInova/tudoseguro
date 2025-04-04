@@ -10,7 +10,7 @@ Route::get('/sobre', Pages\Sobre::class)->name('sobre');
 Route::get('/produtos', Pages\Produtos::class)->name('produtos');
 Route::get('/produto/{produto}/{slug?}', Pages\ProdutoShow::class)->name('produto.show');
 Route::get('/colaboradores', Pages\Colaboradores::class)->name('colaboradores');
-Route::get('/cartao-digital/{colaborador?}', Pages\CartaoDigital::class);
+Route::get('/cartao-digital/{colaborador?}', Pages\CartaoDigital::class)->name('cartao_digital');
 Route::get('/blog', Pages\Blog::class)->name('blog');
 Route::get('/blog/{post}/{slug?}', Pages\PostShow::class)->name('post.show');
 Route::get('/categoria/{produtoCategoria}/{slug?}', Pages\ProdutoCategoriaShow::class)->name('produto_categoria.show');

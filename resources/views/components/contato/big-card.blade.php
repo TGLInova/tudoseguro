@@ -12,11 +12,11 @@
                 <x-ui::h2 class="text-center mb-6">
                     Entre em contato
                 </x-ui::h2>
-                @foreach($items as $icon => $item)
-                <div class="flex items-center gap-4 px-5 h-20 rounded-lg bg-gray-200 border-2 border-gray-300">
-                    <x-icon class="h-10 w-10 flex-none text-primary-500" :name="$icon" />
-                    <div>{{ $item }}</div>
-                </div>
+                @foreach($items as $icon => [$url, $item])
+                    <a target="_blank" rel="noopener nofollow" @if($url) href="{{ $url }}" @endif class="flex items-center gap-4 px-5 h-20 rounded-lg bg-gray-200 border-2 border-gray-300">
+                        <x-icon class="h-10 w-10 flex-none text-primary-500" :name="$icon" />
+                        <div>{{ $item }}</div>
+                    </a>
                 @endforeach
             </div>
         </div>
