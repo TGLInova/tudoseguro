@@ -53,8 +53,8 @@
                 @php
                     $img = data_get($produto->metadados, 'beneficios.imagem');
                 @endphp
-                <div class="h-full flex items-end">
-                    <img class="h-96 w-96 object-contain object-bottom"
+                <div class="h-full flex items-center">
+                    <img class="h-96 w-96 object-cover object-center rounded-lg"
                         src="{{ $img ? Storage::url($img) : asset('static/img/beneficios.webp') }}">
                 </div>
             </x-ui::container>
