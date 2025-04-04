@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\CartaoBeneficiosContador;
+use App\Filament\Widgets\PostsAgendadosWidget;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
@@ -57,9 +59,11 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->brandLogo(asset('static/img/logo.webp'))
             ->brandLogoHeight('3.6rem')
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
+            // ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
+                PostsAgendadosWidget::class,
+                CartaoBeneficiosContador::class,
                 // Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
