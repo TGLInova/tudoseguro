@@ -167,7 +167,7 @@
         </x-ui::container>
     </x-ui::section>
 
-    <div class="py-6 bg-gray-200">
+    <div class="py-4 bg-gray-200">
         <x-ui::container class="grid lg:grid-cols-5 grid-cols-3 gap-6 items-center">
             <x-ui::h3 class="max-lg:text-sm">
                 Conheça alguns de
@@ -185,7 +185,7 @@
                         <x-ui::swiper.item>
                             <img src="{{ $parceiro->imagem->url }}" title="{{ $parceiro->nome }}"
                                 alt="{{ $parceiro->nome }}" loading="lazy" width="138" height="90"
-                                class="w-full object-contain object-center grayscale hover:grayscale-0 duration-300">
+                                class="w-full h-10 object-contain object-center grayscale hover:grayscale-0 duration-300">
                         </x-ui::swiper.item>
                     @endforeach
                 </x-ui::swiper>
