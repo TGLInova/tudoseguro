@@ -2,18 +2,13 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ContatoResource\Pages;
-use App\Filament\Resources\ContatoResource\RelationManagers;
+use Filament\Tables;
 use App\Models\Contato;
-use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Infolists\Components\TextEntry;
+use Filament\Tables\Table;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Filament\Infolists\Components\TextEntry;
+use App\Filament\Resources\ContatoResource\Pages;
 
 class ContatoResource extends Resource
 {
@@ -72,9 +67,7 @@ class ContatoResource extends Resource
     {
         return [
             'index' => Pages\ListContatos::route('/'),
-            // 'create' => Pages\CreateContato::route('/create'),
             'view' => Pages\ViewContato::route('/{record}'),
-            // 'edit' => Pages\EditContato::route('/{record}/edit'),
         ];
     }
 }
