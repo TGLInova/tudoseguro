@@ -28,6 +28,8 @@ class CartaoBeneficioResource extends Resource
 
     protected static ?string $modelLabel = 'Cartão de Benefício';
 
+    protected static ?string $navigationGroup = 'Formulários';
+
     public static function infolist(Infolist $infolist): Infolist
     {
         $mask = new Masker;

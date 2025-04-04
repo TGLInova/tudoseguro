@@ -21,6 +21,8 @@ class ContatoResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-envelope';
 
+    protected static ?string $navigationGroup = 'Formulários';
+
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist->schema([
