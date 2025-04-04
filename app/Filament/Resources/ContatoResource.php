@@ -72,9 +72,9 @@ class ContatoResource extends Resource
     {
         return [
             'index' => Pages\ListContatos::route('/'),
-            'create' => Pages\CreateContato::route('/create'),
+            // 'create' => Pages\CreateContato::route('/create'),
             'view' => Pages\ViewContato::route('/{record}'),
-            'edit' => Pages\EditContato::route('/{record}/edit'),
+            // 'edit' => Pages\EditContato::route('/{record}/edit'),
         ];
     }
 }
