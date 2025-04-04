@@ -33,8 +33,10 @@ class ProdutoCategoriaResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Group::make([
-                    FileUpload::make('caminho')->label('Imagem')->image()->imageEditor(),
-                ])->relationship('imagem')->columnSpanFull(),
+                    FileUpload::make('caminho')->label('Imagem')->image()->imageEditor()->directory('midias/produto_categorias'),
+                ])
+                ->relationship('imagem', fn(?array $state): bool => filled($state['caminho']))
+                ->columnSpanFull(),
                 Forms\Components\TextInput::make('nome')->required(),
                 IconPicker::make('icone')->searchable(),
                 Forms\Components\Textarea::make('descricao')->label('Descrição')->columnSpanFull(),
@@ -57,7 +59,7 @@ class ProdutoCategoriaResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()->iconButton(),
-                Tables\Actions\Action::make('url')->url(fn ($record) => $record->url, true)->icon('heroicon-o-eye')->iconButton(),
+                Tables\Actions\Action::make('url')->url(fn($record) => $record->url, true)->icon('heroicon-o-eye')->iconButton(),
             ]);
     }
 

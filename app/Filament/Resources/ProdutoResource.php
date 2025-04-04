@@ -40,7 +40,7 @@ class ProdutoResource extends Resource
             ->columns(2)
             ->schema([
                 Forms\Components\Group::make([
-                    Forms\Components\FileUpload::make('caminho')->label('Imagem')->required()
+                    Forms\Components\FileUpload::make('caminho')->label('Imagem')->required()->directory('midias/produtos')
                 ])->relationship('imagem')->columnSpanFull(),
                 Forms\Components\TextInput::make('nome')
                     ->required()
