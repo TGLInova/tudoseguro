@@ -77,7 +77,7 @@ class ProdutoResource extends Resource
                                     })
                             ),
                         Fc\RichEditor::make('texto')->columnSpan(3)->required()->disableToolbarButtons(['attachFiles']),
-                        Fc\FileUpload::make('imagem')->directory('produtos/metadados')->maxSize(1024)->required(),
+                        Fc\FileUpload::make('imagem')->directory('produtos/metadados')->maxSize(1024)->required()->image()->imageEditor(),
                     ]),
 
                     Fc\Section::make()
