@@ -9,7 +9,7 @@
 
     <!-- SEO -->
     <link rel="canonical" href="{{ $canonical }}">
-    <meta property="og:title" content="{{ $title ?? config('app.name') }}">
+    <meta property="og:title" content="{{ $title ? sprintf('%s | %s', $title, config('app.name')) : config('app.name') }}">
     <meta property="og:url" content="{{ $canonical }}">
     <meta property="og:type" content="website">
     <meta property="og:description" content="{{ $description }}">
