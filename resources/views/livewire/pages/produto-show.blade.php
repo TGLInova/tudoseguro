@@ -20,7 +20,7 @@
             </x-ui::container>
         </x-ui::section>
 
-        @if($items = $produto->metadados->get('public_alvo'))
+        @if($items = $produto->metadados->get('publico_alvo'))
         <x-ui::section>
             <x-ui::container class="space-y-6">
                 <x-ui::h2 class='text-center font-semibold'>Para quem é indicado:</x-ui::h2>
@@ -44,7 +44,9 @@
         <section class="bg-gray-200">
             <x-ui::container class="space-y-6 grid lg:grid-cols-2 gap-16 items-center">
                 <div class='space-y-4 py-12'>
-                    <x-ui::h2 class='font-semibold'>Benefícios do {{ $produto->nome }}</x-ui::h2>
+                    <x-ui::h2 class='font-semibold'>
+                        {{ data_get($produto->metadados, 'beneficios.titulo', "Benefícios do {$produto->nome}") }}
+                    </x-ui::h2>
                     <div class="prose marker:text-gray-400 marker:text-sm">{!! data_get($produto->metadados, 'beneficios.texto') !!}</div>
                     <x-ui::button variant="primary">
                         Contratar agora

@@ -5,25 +5,26 @@ namespace App\Filament\Resources;
 use Filament\Forms;
 use Filament\Tables;
 use App\Models\Produto;
+use Filament\Forms\Get;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
+use Filament\Forms\Components as Fc;
+use Filament\Forms\Components\Fieldset;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\ToggleColumn;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Placeholder;
+use Filament\Forms\Components\Builder\Block;
 use App\Filament\Resources\ProdutoResource\Pages;
 use TomatoPHP\FilamentIcons\Components\IconColumn;
 use TomatoPHP\FilamentIcons\Components\IconPicker;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\ProdutoResource\RelationManagers;
-use Filament\Forms\Components\Builder\Block;
-use Filament\Forms\Components\Fieldset;
-use Filament\Forms\Components\Placeholder;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components as Fc;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 
 class ProdutoResource extends Resource
 {
@@ -39,19 +40,19 @@ class ProdutoResource extends Resource
             ->columns(2)
             ->schema([
                 Forms\Components\Group::make([
-                    Forms\Components\FileUpload::make('caminho')->label('Imagem')
+                    Forms\Components\FileUpload::make('caminho')->label('Imagem')->required()
                 ])->relationship('imagem')->columnSpanFull(),
                 Forms\Components\TextInput::make('nome')
                     ->required()
                     ->maxLength(100),
-                IconPicker::make('icone')->searchable(),
+                IconPicker::make('icone')->searchable()->label('Ícone'),
                 Forms\Components\Textarea::make('descricao')->maxLength(255)->columnSpanFull()->label('Descrição'),
                 // Forms\Components\RichEditor::make('texto')->columnSpanFull(),
 
                 Fieldset::make('Conteúdo')->columns(1)->statePath('metadados')->columnSpanFull()->schema([
 
                     Fc\Section::make()->compact()->heading('O que é?')->schema([
-                        RichEditor::make('texto')->label(false),
+                        RichEditor::make('texto')->label(false)->disableToolbarButtons(['attachFiles']),
                     ]),
 
                     Fc\Section::make()->compact()->heading('Para quem é?')->collapsible()->schema([
@@ -60,11 +61,22 @@ class ProdutoResource extends Resource
                             IconPicker::make('icone')->label('Ícone'),
                             Fc\TextInput::make('titulo'),
                             Fc\Textarea::make('texto')
-                        ])->formatStateUsing(fn($state) => empty($state) ? [[], [], []] : $state),
+                        ])->formatStateUsing(fn($state) => empty($state) ? [['icone' => 'icon-familia', 'titulo' => 'Paes e Mães'], ['icone' => 'icon-autonomo', 'titulo' => 'Autônomos'], ['icone' => 'icon-foguete', 'titulo' => 'Empresários']] : $state),
                     ]),
 
                     Fc\Section::make()->compact()->collapsible()->heading('Benefícios')->columns(4)->statePath('beneficios')->schema([
-                        Fc\RichEditor::make('texto')->columnSpan(3)->required(),
+                        Fc\TextInput::make('titulo')
+                            ->columnSpanFull()
+                            ->required()
+                            ->label('Título')
+                            ->suffixAction(
+                                Fc\Actions\Action::make('refresh_title')
+                                    ->icon('heroicon-o-arrow-path')
+                                    ->action(function ($set, Get $get) {
+                                        $set('titulo', 'Benefícios do ' . $get('data.nome', true));
+                                    })
+                            ),
+                        Fc\RichEditor::make('texto')->columnSpan(3)->required()->disableToolbarButtons(['attachFiles']),
                         Fc\FileUpload::make('imagem')->directory('produtos/metadados')->maxSize(1024)->required(),
                     ]),
 
@@ -86,7 +98,7 @@ class ProdutoResource extends Resource
                                     Fc\Repeater::make('itens')->simple(
                                         Fc\TextInput::make('texto')->required()
                                     )
-                                ])->formatStateUsing(fn($state) => empty($state) ? [['titulo' => 'Cobertuas'], ['titulo' => 'Assistências']] : $state),
+                                ])->formatStateUsing(fn($state) => empty($state) ? [['titulo' => 'Coberturas', 'icone' => 'icon-seguranca'], ['titulo' => 'Assistências', 'icone' => 'icon-ferramentas']] : $state),
                         ])
 
                 ]),
