@@ -74,7 +74,7 @@ class ColaboradorResource extends Resource
             ->columns([
                 ImageColumn::make('imagem.caminho')->size(50)->circular(),
                 Tables\Columns\TextColumn::make('nome')
-                    ->searchable(),
+                    ->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('sobrenome')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('cargo')
