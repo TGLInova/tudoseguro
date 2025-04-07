@@ -13,23 +13,24 @@ class FormularioCartaoBeneficio extends Component
 
     public array $form = [
         'nome'     => '',
-        'cpf' =>  '',
+        'celular'  => '',
     ];
 
     public function rules()
     {
         return [
             'form.nome' => ['required', 'string', 'max:100'],
-            'form.cpf' => ['required', 'cpf', Rule::unique(CartaoBeneficio::class, 'cpf')]
+            // 'form.cpf' => ['required', 'cpf', Rule::unique(CartaoBeneficio::class, 'cpf')]
+            'form.celular' => ['required', 'celular_com_ddd'],
         ];
     }
 
 
     public function submit()
     {
-        $dados = $this->validate(attributes: ['form.nome' => 'nome', 'form.cpf' => 'CPF'])['form'];
+        $dados = $this->validate(attributes: ['form.nome' => 'nome', 'form.cpf' => 'CPF', 'form.celular' => 'celular'])['form'];
 
-        $dados['cpf'] = preg_replace('/\D+/', '', $dados['cpf']);
+        // $dados['cpf'] = preg_replace('/\D+/', '', $dados['cpf']);
 
         CartaoBeneficio::create($dados);
 

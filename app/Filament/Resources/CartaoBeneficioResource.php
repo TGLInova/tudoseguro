@@ -36,11 +36,12 @@ class CartaoBeneficioResource extends Resource
 
         return $infolist->columns(1)->schema([
             Ic\TextEntry::make('nome'),
-            Ic\TextEntry::make('cpf')
-                ->label('CPF')
-                ->formatStateUsing(static fn ($state) => $mask->mask($state, '000.000.000-00')),
-            Ic\TextEntry::make('numero')
-                ->formatStateUsing(static fn ($state) => $mask->mask($state, '0000 0000 0000 0000'))->label('Nº Cartão'),
+            Ic\TextEntry::make('celular')->icon('heroicon-o-phone'),
+            // Ic\TextEntry::make('cpf')
+            //     ->label('CPF')
+            //     ->formatStateUsing(static fn ($state) => $mask->mask($state, '000.000.000-00')),
+            // Ic\TextEntry::make('numero')
+            //     ->formatStateUsing(static fn ($state) => $mask->mask($state, '0000 0000 0000 0000'))->label('Nº Cartão'),
         ]);
     }
 
@@ -49,8 +50,8 @@ class CartaoBeneficioResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nome')->required(),
-                Forms\Components\TextInput::make('cpf')->disabled()->required()->label('CPF')->mask('999.999.999-99'),
-                TextInput::make('numero')->disabled()->mask('9999 9999 9999 9999'),
+                // Forms\Components\TextInput::make('cpf')->disabled()->required()->label('CPF')->mask('999.999.999-99'),
+                // TextInput::make('numero')->disabled()->mask('9999 9999 9999 9999'),
             ]);
     }
 
@@ -60,12 +61,13 @@ class CartaoBeneficioResource extends Resource
 
         return $table
             ->columns([
-                TextColumn::make('numero')->formatStateUsing(static fn ($state) => $mask->mask($state, '0000 0000 0000 0000')),
+                // TextColumn::make('numero')->formatStateUsing(static fn ($state) => $mask->mask($state, '0000 0000 0000 0000')),
                 Tables\Columns\TextColumn::make('nome')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('cpf')
-                    ->formatStateUsing(static fn ($state) => $mask->mask($state, '000.000.000-00'))
-                    ->searchable(),
+                TextColumn::make('celular'),
+                // Tables\Columns\TextColumn::make('cpf')
+                //     ->formatStateUsing(static fn ($state) => $mask->mask($state, '000.000.000-00'))
+                //     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
