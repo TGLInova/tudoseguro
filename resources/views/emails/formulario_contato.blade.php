@@ -9,6 +9,9 @@ Essa pessoa envio os seguintes dados pelo site:
 **Telefone**<br>
 {{ $contato->telefone }}
 
+**Assunto**<br>
+{{ $contato->assunto }}
+
 **Mensagem**<br>
 {{ $contato->mensagem }}
 

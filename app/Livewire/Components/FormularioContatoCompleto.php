@@ -3,6 +3,7 @@
 namespace App\Livewire\Components;
 
 use App\Models\Contato;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class FormularioContatoCompleto extends Component
@@ -37,7 +38,9 @@ class FormularioContatoCompleto extends Component
     {
         $dados = $this->validate()['form'];
 
-        Contato::create($dados);
+        $contato = Contato::create($dados);
+
+        Mail::queue(new \App\Mail\FormularioContatoMail($contato));
 
         $this->reset('form');
 

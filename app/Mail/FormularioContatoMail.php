@@ -28,8 +28,8 @@ class FormularioContatoMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Conexão Paterna - ' . $this->contato->nome,
-            to: 'paula.borba@grupotgl.com'
+            subject: $this->contato->assunto,
+            to: 'elizeu.dias@tudoseguro.com.br'
         );
     }
 
