@@ -37,6 +37,8 @@ class ParceiroResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->reorderable('ordem')
+            ->defaultSort('ordem')
             ->columns([
                 // ImageColumn::make('imagem.caminho')->height(50),
                 TextColumn::make('nome')->grow(true)->searchable(),
