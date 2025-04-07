@@ -109,8 +109,9 @@ class ProdutoResource extends Resource
     {
         return $table
             ->reorderable('ordem')
+            ->defaultSort('ordem')
             ->columns([
-                TextColumn::make('nome')->searchable(),
+                TextColumn::make('nome')->searchable()->sortable(),
                 IconColumn::make('icone'),
                 ToggleColumn::make('ativo'),
                 ToggleColumn::make('destaque'),
