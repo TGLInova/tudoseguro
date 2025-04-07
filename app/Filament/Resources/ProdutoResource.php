@@ -37,7 +37,7 @@ class ProdutoResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->columns(2)
+            ->columns(3)
             ->schema([
                 Forms\Components\Group::make([
                     Forms\Components\FileUpload::make('caminho')->label('Imagem')->required()->directory('midias/produtos')->image()->imageEditor()
@@ -46,6 +46,7 @@ class ProdutoResource extends Resource
                     ->required()
                     ->maxLength(100),
                 IconPicker::make('icone')->searchable()->label('Ícone'),
+                Fc\CheckboxList::make('categorias')->relationship('produtoCategorias', 'nome')->label('Categorias'),
                 Forms\Components\Textarea::make('descricao')->maxLength(255)->columnSpanFull()->label('Descrição'),
                 // Forms\Components\RichEditor::make('texto')->columnSpanFull(),
 
