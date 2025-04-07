@@ -16,7 +16,7 @@ class Home extends BasePageComponent
     {
         $produtos = Produto::query()->web()->take(10)->cursor();
 
-        $produtosDestaques = Produto::query()->web()->where('destaque', true)->cursor();
+        $produtosDestaques = Produto::query()->web()->oldest('ordem')->where('destaque', true)->cursor();
 
         $testemunhos = Testemunho::query()->web()->cursor();
 
