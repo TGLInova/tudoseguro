@@ -57,6 +57,7 @@ class TestemunhoResource extends Resource
     {
         return $table
             ->reorderable('ordem')
+            ->defaultSort('ordem')
             ->columns([
                 ImageColumn::make('imagem.caminho')->size(50)->circular(),
                 Tables\Columns\TextColumn::make('nome')
